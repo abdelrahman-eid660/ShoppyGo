@@ -1,0 +1,202 @@
+<div class="terms-page">
+  <!-- Hero Section -->
+  <section class="terms-hero">
+    <div class="hero-content">
+      <span class="hero-badge">
+        <i class="fa-solid fa-file-contract"></i>
+        {{ 'terms_conditions.badge' | transloco }}
+      </span>
+
+      <h1 [innerHTML]="'terms_conditions.hero_title' | transloco"></h1>
+
+      <p>{{ 'terms_conditions.hero_desc' | transloco }}</p>
+
+      <div class="hero-highlights">
+        <div class="highlight-item">
+          <i class="fa-solid fa-gavel"></i>
+          <div>
+            <strong>{{ 'terms_conditions.hl_1_title' | transloco }}</strong>
+            <span>{{ 'terms_conditions.hl_1_sub' | transloco }}</span>
+          </div>
+        </div>
+
+        <div class="highlight-item">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <div>
+            <strong>{{ 'terms_conditions.hl_2_title' | transloco }}</strong>
+            <span>{{ 'terms_conditions.hl_2_sub' | transloco }}</span>
+          </div>
+        </div>
+
+        <div class="highlight-item">
+          <i class="fa-solid fa-handshake-angle"></i>
+          <div>
+            <strong>{{ 'terms_conditions.hl_3_title' | transloco }}</strong>
+            <span>{{ 'terms_conditions.hl_3_sub' | transloco }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Terms Grid -->
+  <section class="pillars-section">
+    <div class="section-heading">
+      <span>{{ 'terms_conditions.pillars_label' | transloco }}</span>
+      <h2>{{ 'terms_conditions.pillars_title' | transloco }}</h2>
+      <p>{{ 'terms_conditions.pillars_desc' | transloco }}</p>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="card-icon">
+          <i class="fa-solid fa-user-check"></i>
+        </div>
+        <h3>{{ 'terms_conditions.p1_title' | transloco }}</h3>
+        <p>{{ 'terms_conditions.p1_desc' | transloco }}</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="card-icon">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+        <h3>{{ 'terms_conditions.p2_title' | transloco }}</h3>
+        <p>{{ 'terms_conditions.p2_desc' | transloco }}</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="card-icon">
+          <i class="fa-solid fa-tags"></i>
+        </div>
+        <h3>{{ 'terms_conditions.p3_title' | transloco }}</h3>
+        <p>{{ 'terms_conditions.p3_desc' | transloco }}</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="card-icon">
+          <i class="fa-solid fa-copyright"></i>
+        </div>
+        <h3>{{ 'terms_conditions.p4_title' | transloco }}</h3>
+        <p>{{ 'terms_conditions.p4_desc' | transloco }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Dual Section (User Responsibilities & Platform Limitations) -->
+  <section class="details-dual-section">
+    <div class="details-container">
+      <!-- User Responsibilities Card -->
+      <div class="details-card info-card">
+        <div class="details-header">
+          <i class="fa-solid fa-user-shield"></i>
+          <div>
+            <h3>{{ 'terms_conditions.details_1_title' | transloco }}</h3>
+            <p>{{ 'terms_conditions.details_1_sub' | transloco }}</p>
+          </div>
+        </div>
+        <ul class="details-list text-list">
+          <li>
+            <strong><i class="fa-solid fa-key"></i> {{ 'terms_conditions.resp_1_t' | transloco }}:</strong>
+            <span>{{ 'terms_conditions.resp_1_d' | transloco }}</span>
+          </li>
+          <li>
+            <strong><i class="fa-solid fa-ban"></i> {{ 'terms_conditions.resp_2_t' | transloco }}:</strong>
+            <span>{{ 'terms_conditions.resp_2_d' | transloco }}</span>
+          </li>
+          <li>
+            <strong><i class="fa-solid fa-address-book"></i> {{ 'terms_conditions.resp_3_t' | transloco }}:</strong>
+            <span>{{ 'terms_conditions.resp_3_d' | transloco }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Limitation of Liability Card -->
+      <div class="details-card accent-card">
+        <div class="details-header">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <h3>{{ 'terms_conditions.details_2_title' | transloco }}</h3>
+            <p>{{ 'terms_conditions.details_2_sub' | transloco }}</p>
+          </div>
+        </div>
+        <ul class="details-list text-list">
+          <li>
+            <strong><i class="fa-solid fa-triangle-exclamation"></i> {{ 'terms_conditions.liab_1_t' | transloco }}:</strong>
+            <span>{{ 'terms_conditions.liab_1_d' | transloco }}</span>
+          </li>
+          <li>
+            <strong><i class="fa-solid fa-truck-fast"></i> {{ 'terms_conditions.liab_2_t' | transloco }}:</strong>
+            <span>{{ 'terms_conditions.liab_2_d' | transloco }}</span>
+          </li>
+          <li>
+            <strong><i class="fa-solid fa-wrench"></i> {{ 'terms_conditions.liab_3_t' | transloco }}:</strong>
+            <span>{{ 'terms_conditions.liab_3_d' | transloco }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="section-heading">
+      <span>{{ 'terms_conditions.faq_label' | transloco }}</span>
+      <h2>{{ 'terms_conditions.faq_title' | transloco }}</h2>
+      <p>{{ 'terms_conditions.faq_desc' | transloco }}</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'terms_conditions.faq1_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'terms_conditions.faq1_a' | transloco }}</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'terms_conditions.faq2_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'terms_conditions.faq2_a' | transloco }}</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'terms_conditions.faq3_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'terms_conditions.faq3_a' | transloco }}</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'terms_conditions.faq4_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'terms_conditions.faq4_a' | transloco }}</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Bottom CTA Section -->
+  <section class="terms-cta">
+    <div class="cta-content">
+      <div class="cta-icon">
+        <i class="fa-solid fa-scale-unbalanced-flip"></i>
+      </div>
+      <h2>{{ 'terms_conditions.cta_title' | transloco }}</h2>
+      <p>{{ 'terms_conditions.cta_desc' | transloco }}</p>
+      <div class="cta-buttons">
+        <a routerLink="/user/contact" class="btn-primary">
+          {{ 'terms_conditions.btn_contact_legal' | transloco }}
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <a routerLink="/user/privacy-policy" class="btn-secondary">
+          {{ 'terms_conditions.btn_view_privacy' | transloco }}
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

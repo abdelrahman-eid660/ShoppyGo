@@ -1,0 +1,99 @@
+<footer>
+  <div class="footer-carousel-container my-5 mb-0">
+    <button type="button" class="swiper-nav-btn btn-prev" (click)="prevSlide()" aria-label="Previous">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </button>
+    <swiper-container #swiperRef
+      [attr.dir]="langService.currentLanguage() === 'ar' ? 'rtl' : 'ltr'" slides-per-view="6"
+      slides-per-group="1" space-between="16" loop="true" navigation="false"
+      breakpoints='{
+        "0": { "slidesPerView": 2, "spaceBetween": 10 },
+        "576": { "slidesPerView": 3, "spaceBetween": 12 },
+        "768": { "slidesPerView": 4, "spaceBetween": 14 },
+        "1024": { "slidesPerView": 6, "spaceBetween": 16 }
+      }'
+    >
+      @for (item of items; track $index) {
+        <swiper-slide>
+          <div class="footer-card">
+            <a [routerLink]="['/user/categories', item.label]" class="card-inner">
+              <div class="img-wrapper">
+                <img class="img-fluid" [src]="item.img" [alt]="item.label | transloco" />
+              </div>
+              <span class="card-title">{{ item.label | transloco }}</span>
+            </a>
+          </div>
+        </swiper-slide>
+      }
+    </swiper-container>
+
+    <button type="button" class="swiper-nav-btn btn-next" (click)="nextSlide()" aria-label="Next">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M9 18l6-6-6-6" />
+      </svg>
+    </button>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="title">
+          <h5>{{"support" | transloco}}</h5>
+        </div>
+        <div class="sub-tobics">
+          <ul>
+            <li><a routerLink="/user/help-center">{{"Help Center" | transloco}}</a></li>
+            <li><a routerLink="/user/privacy-policy">{{"privacy policy" | transloco}}</a></li>
+            <li><a routerLink="/user/return-policy">{{"Return Policy" | transloco}}</a></li>
+            <li><a routerLink="/user/terms-conditions">{{"Terms and Conditions" | transloco}}</a></li>
+            <li><a routerLink="">0201144665225+</a></li>
+            <li><a routerLink="">eida0556@gmail.com</a></li>
+            <li><a routerLink="/user/our-address">{{"Our Addresses" | transloco}}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="title">
+          <h5>{{"Quick Access" | transloco}}</h5>
+        </div>
+        <div class="sub-tobics">
+          <ul>
+            <li><a routerLink="/user/login">{{"registration" | transloco}}</a></li>
+            <li><a routerLink="/user/Shipping-handling">{{"Shipping and handling" | transloco}}</a></li>
+            <li><a routerLink="/user/user-account/return-request">{{"Return Request" | transloco}}</a></li>
+            <li><a routerLink="/user/terms-of-use">{{"terms of use" | transloco}}</a></li>
+            <li><a routerLink="/user/user-account/my-orders">{{"order tracking" | transloco}}</a></li>
+            <li><a routerLink="/user/store">{{"Best Items" | transloco}}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="title">
+          <h5>{{"Payment Ways" | transloco}}</h5>
+        </div>
+        <div class="sub-tobics">
+          <img src="/assets/imgs/footer/payments.png" class="img-fluid" alt="payments-way">
+          <div class="title mt-4">
+            <h5>{{"Contact With Us" | transloco}}</h5>
+          </div>
+          <div class="social-media p-3 d-flex align-items-center justify-content-start gap-4 mt-2">
+            <i class="fa-brands fa-facebook-f"><a routerLink="https://www.facebook.com/abd.diesel.2025"></a></i>
+            <i class="fa-brands fa-instagram"><a routerLink="https://www.instagram.com/abdelrahman_eid111/"></a></i>
+            <i class="fa-brands fa-x-twitter"><a routerLink=""></a></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="copy-write">
+      <div class="logo">
+        <i class="fa-solid fa-dolly"></i>
+        <h6>ShoppyGo</h6>
+      </div>
+      <p>© 2026 ShoppyGo. جميع الحقوق محفوظة.</p>
+      <h6>تم تطوير هذا الموقع بواسطة مبرمجين العرب.</h6>
+    </div>
+  </div>
+</footer>

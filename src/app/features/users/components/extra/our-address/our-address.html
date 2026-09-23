@@ -1,0 +1,160 @@
+<div class="branches-page">
+  <!-- Hero Section -->
+  <section class="branches-hero">
+    <div class="hero-content">
+      <span class="hero-badge">
+        <i class="fa-solid fa-store"></i>
+        {{ 'branches.badge' | transloco }}
+      </span>
+      <h1 [innerHTML]="'branches.hero_title' | transloco"></h1>
+      <p>{{ 'branches.hero_desc' | transloco }}</p>
+
+      <!-- Stats Summary Bar -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <i class="fa-solid fa-city"></i>
+          <div>
+            <strong>3+</strong>
+            <span>{{ 'branches.stat_cities' | transloco }}</span>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <i class="fa-solid fa-shop"></i>
+          <div>
+            <strong>12+</strong>
+            <span>{{ 'branches.stat_branches' | transloco }}</span>
+          </div>
+        </div>
+
+        <div class="stat-item">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <strong>7 {{ 'branches.days' | transloco }}</strong>
+            <span>{{ 'branches.stat_support' | transloco }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Branches Section -->
+  <section class="branches-section">
+    <!-- City Filter Tabs -->
+    <div class="filter-wrapper">
+      <div class="filter-tabs">
+        <button
+          class="tab-btn"
+          [class.active]="selectedCity() === 'all'"
+          (click)="filterByCity('all')">
+          <i class="fa-solid fa-border-all"></i>
+          {{ 'branches.filter_all' | transloco }}
+        </button>
+
+        <button
+          class="tab-btn"
+          [class.active]="selectedCity() === 'cairo'"
+          (click)="filterByCity('cairo')">
+          <i class="fa-solid fa-building-columns"></i>
+          {{ 'branches.filter_cairo' | transloco }}
+        </button>
+
+        <button
+          class="tab-btn"
+          [class.active]="selectedCity() === 'giza'"
+          (click)="filterByCity('giza')">
+          <i class="fa-solid fa-pyramid"></i>
+          {{ 'branches.filter_giza' | transloco }}
+        </button>
+
+        <button
+          class="tab-btn"
+          [class.active]="selectedCity() === 'alex'"
+          (click)="filterByCity('alex')">
+          <i class="fa-solid fa-water"></i>
+          {{ 'branches.filter_alex' | transloco }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Branches Grid -->
+    <div class="branches-grid">
+      @for (branch of filteredBranches(); track branch.id) {
+        <div class="branch-card">
+          <!-- Card Top -->
+          <div class="card-header">
+            <div class="branch-meta">
+              <span class="city-badge">{{ branch.cityName | transloco }}</span>
+              @if (branch.isMain) {
+                <span class="main-tag">
+                  <i class="fa-solid fa-star"></i>
+                  {{ 'branches.tag_main' | transloco }}
+                </span>
+              }
+            </div>
+            <h3 class="branch-name">{{ branch.nameKey | transloco }}</h3>
+          </div>
+
+          <!-- Card Body -->
+          <div class="card-body">
+            <!-- Address -->
+            <div class="info-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>{{ 'branches.label_address' | transloco }}</strong>
+                <p>{{ branch.addressKey | transloco }}</p>
+              </div>
+            </div>
+
+            <!-- Working Hours -->
+            <div class="info-row">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>{{ 'branches.label_hours' | transloco }}</strong>
+                <p>{{ branch.hoursKey | transloco }}</p>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="info-row">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <strong>{{ 'branches.label_phone' | transloco }}</strong>
+                <p dir="ltr" class="phone-num">{{ branch.phone }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Footer Actions -->
+          <div class="card-footer">
+            <a [href]="branch.mapsUrl" target="_blank" class="btn-map">
+              <i class="fa-solid fa-diamond-turn-right"></i>
+              {{ 'branches.btn_directions' | transloco }}
+            </a>
+            <a [href]="'tel:' + branch.phone" class="btn-call">
+              <i class="fa-solid fa-phone-flip"></i>
+              {{ 'branches.btn_call' | transloco }}
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Customer Notice Banner -->
+  <section class="support-notice">
+    <div class="notice-container">
+      <div class="notice-icon">
+        <i class="fa-solid fa-headset"></i>
+      </div>
+      <div class="notice-text">
+        <h3>{{ 'branches.notice_title' | transloco }}</h3>
+        <p>{{ 'branches.notice_desc' | transloco }}</p>
+      </div>
+      <a routerLink="/user/contact" class="btn-contact-us">
+        {{ 'branches.btn_contact_support' | transloco }}
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+    </div>
+  </section>
+</div>

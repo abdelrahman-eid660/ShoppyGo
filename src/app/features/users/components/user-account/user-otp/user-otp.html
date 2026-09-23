@@ -1,0 +1,66 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <!-- Header Section -->
+    <div class="auth-header">
+      <div class="logo-badge">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <h1>{{ 'auth_user.confirm_otp.title' | transloco }}</h1>
+      <p>
+        {{ 'auth_user.confirm_otp.subtitle' | transloco }}
+        <strong class="user-email" dir="ltr">usr***&#64;domain.com</strong>
+      </p>
+    </div>
+
+    <!-- OTP Form -->
+    <form (ngSubmit)="onSubmit()" class="auth-form">
+      <!-- OTP Inputs Grid (Always LTR for numbers) -->
+      <div class="otp-wrapper" dir="ltr">
+        @for (digit of otpDigits(); track $index; let i = $index) {
+          <input #otpInput type="text" maxLength="1" inputmode="numeric" pattern="[0-9]*" class="otp-input" [class.has-value]="otpDigits()[i] !== ''" [value]="otpDigits()[i]" (input)="onDigitInput($event, i)" (keydown)="onKeyDown($event, i)" (paste)="onPaste($event)" autocomplete="one-time-code" />
+        }
+      </div>
+
+      <!-- Resend & Timer Section -->
+      <div class="resend-container">
+        @if (canResend()) {
+          <p class="resend-text">
+            {{ 'auth_user.confirm_otp.didnt_receive' | transloco }}
+            <button type="button" class="btn-resend" (click)="resendOtp()">
+              {{ 'auth_user.confirm_otp.resend_btn' | transloco }}
+            </button>
+          </p>
+        } @else {
+          <p class="timer-text">
+            {{ 'auth_user.confirm_otp.resend_in' | transloco }}
+            <span class="timer-badge" dir="ltr">{{ timerFormatted() }}</span>
+          </p>
+        }
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="btn-submit"
+        [disabled]="!isOtpComplete() || isLoading()">
+        @if (isLoading()) {
+          <i class="fa-solid fa-spinner fa-spin"></i>
+          <span>{{ 'auth_user.confirm_otp.btn_submitting' | transloco }}</span>
+        } @else {
+          <span>{{ 'auth_user.confirm_otp.btn_submit' | transloco }}</span>
+          <i class="fa-solid fa-check-double"></i>
+        }
+      </button>
+    </form>
+
+    <!-- Footer Link -->
+    <div class="auth-footer">
+      <p>
+        <a routerLink="/user/auth/signup" class="back-link">
+          <i class="fa-solid fa-arrow-right-long flip-icon"></i>
+          <span>{{ 'auth_user.confirm_otp.change_email' | transloco }}</span>
+        </a>
+      </p>
+    </div>
+  </div>
+</div>

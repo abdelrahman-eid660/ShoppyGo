@@ -1,0 +1,202 @@
+<div class="privacy-page">
+  <!-- Hero Section -->
+  <section class="privacy-hero">
+    <div class="hero-content">
+      <span class="hero-badge">
+        <i class="fa-solid fa-shield-halved"></i>
+        {{ 'privacy_policy.badge' | transloco }}
+      </span>
+
+      <h1 [innerHTML]="'privacy_policy.hero_title' | transloco"></h1>
+
+      <p>{{ 'privacy_policy.hero_desc' | transloco }}</p>
+
+      <div class="hero-highlights">
+        <div class="highlight-item">
+          <i class="fa-solid fa-lock"></i>
+          <div>
+            <strong>{{ 'privacy_policy.hl_1_title' | transloco }}</strong>
+            <span>{{ 'privacy_policy.hl_1_sub' | transloco }}</span>
+          </div>
+        </div>
+
+        <div class="highlight-item">
+          <i class="fa-solid fa-user-check"></i>
+          <div>
+            <strong>{{ 'privacy_policy.hl_2_title' | transloco }}</strong>
+            <span>{{ 'privacy_policy.hl_2_sub' | transloco }}</span>
+          </div>
+        </div>
+
+        <div class="highlight-item">
+          <i class="fa-solid fa-ban"></i>
+          <div>
+            <strong>{{ 'privacy_policy.hl_3_title' | transloco }}</strong>
+            <span>{{ 'privacy_policy.hl_3_sub' | transloco }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Pillars Grid -->
+  <section class="pillars-section">
+    <div class="section-heading">
+      <span>{{ 'privacy_policy.pillars_label' | transloco }}</span>
+      <h2>{{ 'privacy_policy.pillars_title' | transloco }}</h2>
+      <p>{{ 'privacy_policy.pillars_desc' | transloco }}</p>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="card-icon">
+          <i class="fa-solid fa-database"></i>
+        </div>
+        <h3>{{ 'privacy_policy.p1_title' | transloco }}</h3>
+        <p>{{ 'privacy_policy.p1_desc' | transloco }}</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="card-icon">
+          <i class="fa-solid fa-sliders"></i>
+        </div>
+        <h3>{{ 'privacy_policy.p2_title' | transloco }}</h3>
+        <p>{{ 'privacy_policy.p2_desc' | transloco }}</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="card-icon">
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+        <h3>{{ 'privacy_policy.p3_title' | transloco }}</h3>
+        <p>{{ 'privacy_policy.p3_desc' | transloco }}</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="card-icon">
+          <i class="fa-solid fa-cookie-bite"></i>
+        </div>
+        <h3>{{ 'privacy_policy.p4_title' | transloco }}</h3>
+        <p>{{ 'privacy_policy.p4_desc' | transloco }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Sections (Data Collection & Usage) -->
+  <section class="details-dual-section">
+    <div class="details-container">
+      <!-- Data Collection Card -->
+      <div class="details-card info-card">
+        <div class="details-header">
+          <i class="fa-solid fa-file-invoice"></i>
+          <div>
+            <h3>{{ 'privacy_policy.collect_title' | transloco }}</h3>
+            <p>{{ 'privacy_policy.collect_subtitle' | transloco }}</p>
+          </div>
+        </div>
+        <ul class="details-list text-list">
+          <li>
+            <strong><i class="fa-solid fa-id-card"></i> {{ 'privacy_policy.col_1_t' | transloco }}:</strong>
+            <span>{{ 'privacy_policy.col_1_d' | transloco }}</span>
+          </li>
+          <li>
+            <strong><i class="fa-solid fa-credit-card"></i> {{ 'privacy_policy.col_2_t' | transloco }}:</strong>
+            <span>{{ 'privacy_policy.col_2_d' | transloco }}</span>
+          </li>
+          <li>
+            <strong><i class="fa-solid fa-location-dot"></i> {{ 'privacy_policy.col_3_t' | transloco }}:</strong>
+            <span>{{ 'privacy_policy.col_3_d' | transloco }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- User Rights Card -->
+      <div class="details-card accent-card">
+        <div class="details-header">
+          <i class="fa-solid fa-user-gear"></i>
+          <div>
+            <h3>{{ 'privacy_policy.rights_title' | transloco }}</h3>
+            <p>{{ 'privacy_policy.rights_subtitle' | transloco }}</p>
+          </div>
+        </div>
+        <ul class="details-list text-list">
+          <li>
+            <strong><i class="fa-solid fa-pen-to-square"></i> {{ 'privacy_policy.right_1_t' | transloco }}:</strong>
+            <span>{{ 'privacy_policy.right_1_d' | transloco }}</span>
+          </li>
+          <li>
+            <strong><i class="fa-solid fa-trash-can"></i> {{ 'privacy_policy.right_2_t' | transloco }}:</strong>
+            <span>{{ 'privacy_policy.right_2_d' | transloco }}</span>
+          </li>
+          <li>
+            <strong><i class="fa-solid fa-bell-slash"></i> {{ 'privacy_policy.right_3_t' | transloco }}:</strong>
+            <span>{{ 'privacy_policy.right_3_d' | transloco }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="section-heading">
+      <span>{{ 'privacy_policy.faq_label' | transloco }}</span>
+      <h2>{{ 'privacy_policy.faq_title' | transloco }}</h2>
+      <p>{{ 'privacy_policy.faq_desc' | transloco }}</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'privacy_policy.faq1_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'privacy_policy.faq1_a' | transloco }}</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'privacy_policy.faq2_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'privacy_policy.faq2_a' | transloco }}</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'privacy_policy.faq3_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'privacy_policy.faq3_a' | transloco }}</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'privacy_policy.faq4_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'privacy_policy.faq4_a' | transloco }}</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="privacy-cta">
+    <div class="cta-content">
+      <div class="cta-icon">
+        <i class="fa-solid fa-user-shield"></i>
+      </div>
+      <h2>{{ 'privacy_policy.cta_title' | transloco }}</h2>
+      <p>{{ 'privacy_policy.cta_desc' | transloco }}</p>
+      <div class="cta-buttons">
+        <a routerLink="/user/contact" class="btn-primary">
+          {{ 'privacy_policy.btn_contact_privacy' | transloco }}
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <a routerLink="/user/user-account/profile-settings" class="btn-secondary">
+          {{ 'privacy_policy.btn_manage_account' | transloco }}
+        </a>
+      </div>
+    </div>
+  </section>
+</div>

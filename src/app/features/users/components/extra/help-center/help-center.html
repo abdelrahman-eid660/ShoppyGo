@@ -1,0 +1,280 @@
+
+<section class="help-page">
+  <!-- Hero -->
+  <div class="help-hero">
+    <span class="help-badge">
+      {{ 'help_center.badge' | transloco }}
+    </span>
+
+    <h1 [innerHTML]="'help_center.hero_title' | transloco"></h1>
+
+    <p>
+      {{ 'help_center.hero_desc' | transloco }}
+    </p>
+  </div>
+
+  <!-- Quick Help -->
+  <section class="help-section">
+    <div class="section-heading">
+      <h2>{{ 'help_center.quick_help' | transloco }}</h2>
+      <p>{{ 'help_center.quick_help_desc' | transloco }}</p>
+    </div>
+
+    <div class="help-grid">
+      <a routerLink="/user/user-account/my-orders" class="help-card">
+        <div class="help-icon">
+          <i class="fa-solid fa-box"></i>
+        </div>
+
+        <h3>{{ 'help_center.orders' | transloco }}</h3>
+
+        <p>
+          {{ 'help_center.orders_desc' | transloco }}
+        </p>
+
+        <span>
+          {{ 'help_center.track_order' | transloco }}
+          <i class="fa-solid fa-arrow-up-left"></i>
+        </span>
+      </a>
+
+      <a routerLink="/user/Shipping-handling" class="help-card">
+        <div class="help-icon">
+          <i class="fa-solid fa-truck"></i>
+        </div>
+
+        <h3>{{ 'help_center.shipping' | transloco }}</h3>
+
+        <p>
+          {{ 'help_center.shipping_desc' | transloco }}
+        </p>
+
+        <span>
+          {{ 'help_center.learn_more' | transloco }}
+          <i class="fa-solid fa-arrow-up-left"></i>
+        </span>
+      </a>
+
+      <a routerLink="/user/return-request" class="help-card">
+        <div class="help-icon">
+          <i class="fa-solid fa-rotate-left"></i>
+        </div>
+
+        <h3>{{ 'help_center.returns' | transloco }}</h3>
+
+        <p>
+          {{ 'help_center.returns_desc' | transloco }}
+        </p>
+
+        <span>
+          {{ 'help_center.request_return' | transloco }}
+          <i class="fa-solid fa-arrow-up-left"></i>
+        </span>
+      </a>
+
+      <a routerLink="/user/payment" class="help-card">
+        <div class="help-icon">
+          <i class="fa-solid fa-credit-card"></i>
+        </div>
+
+        <h3>{{ 'help_center.payment' | transloco }}</h3>
+
+        <p>
+          {{ 'help_center.payment_desc' | transloco }}
+        </p>
+
+        <span>
+          {{ 'help_center.payment_methods' | transloco }}
+          <i class="fa-solid fa-arrow-up-left"></i>
+        </span>
+      </a>
+
+      <a routerLink="/user/user-account/profile-settings" class="help-card">
+        <div class="help-icon">
+          <i class="fa-solid fa-user"></i>
+        </div>
+
+        <h3>{{ 'help_center.account' | transloco }}</h3>
+
+        <p>
+          {{ 'help_center.account_desc' | transloco }}
+        </p>
+
+        <span>
+          {{ 'help_center.manage_account' | transloco }}
+          <i class="fa-solid fa-arrow-up-left"></i>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-heading">
+      <h2>{{ 'help_center.faq_title' | transloco }}</h2>
+      <p>{{ 'help_center.faq_desc' | transloco }}</p>
+    </div>
+
+    <div class="faq-list">
+      <details>
+        <summary>
+          <span>{{ 'help_center.faq1_q' | transloco }}</span>
+          <i class="fa-solid fa-plus"></i>
+        </summary>
+
+        <p>{{ 'help_center.faq1_a' | transloco }}</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>{{ 'help_center.faq2_q' | transloco }}</span>
+          <i class="fa-solid fa-plus"></i>
+        </summary>
+
+        <p>{{ 'help_center.faq2_a' | transloco }}</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>{{ 'help_center.faq3_q' | transloco }}</span>
+          <i class="fa-solid fa-plus"></i>
+        </summary>
+
+        <p>{{ 'help_center.faq3_a' | transloco }}</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>{{ 'help_center.faq4_q' | transloco }}</span>
+          <i class="fa-solid fa-plus"></i>
+        </summary>
+
+        <p>{{ 'help_center.faq4_a' | transloco }}</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>{{ 'help_center.faq5_q' | transloco }}</span>
+          <i class="fa-solid fa-plus"></i>
+        </summary>
+
+        <p>{{ 'help_center.faq5_a' | transloco }}</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>{{ 'help_center.faq6_q' | transloco }}</span>
+          <i class="fa-solid fa-plus"></i>
+        </summary>
+
+        <p>{{ 'help_center.faq6_a' | transloco }}</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>{{ 'help_center.faq7_q' | transloco }}</span>
+          <i class="fa-solid fa-plus"></i>
+        </summary>
+
+        <p>{{ 'help_center.faq7_a' | transloco }}</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>{{ 'help_center.faq8_q' | transloco }}</span>
+          <i class="fa-solid fa-plus"></i>
+        </summary>
+
+        <p>{{ 'help_center.faq8_a' | transloco }}</p>
+      </details>
+
+      <details>
+        <summary>
+          <span>{{ 'help_center.faq9_q' | transloco }}</span>
+          <i class="fa-solid fa-plus"></i>
+        </summary>
+
+        <p>{{ 'help_center.faq9_a' | transloco }}</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Help Topics -->
+  <section class="topics-section">
+    <div class="section-heading">
+      <h2>{{ 'help_center.categories_title' | transloco }}</h2>
+      <p>{{ 'help_center.categories_desc' | transloco }}</p>
+    </div>
+
+    <div class="topics-grid">
+      <a routerLink="/user/user-account/my-orders">
+        <i class="fa-solid fa-box"></i>
+        <div>
+          <h3>{{ 'help_center.category_orders' | transloco }}</h3>
+          <p>{{ 'help_center.category_orders_desc' | transloco }}</p>
+        </div>
+      </a>
+
+      <a routerLink="/user/Shipping-handling">
+        <i class="fa-solid fa-truck"></i>
+        <div>
+          <h3>{{ 'help_center.category_shipping' | transloco }}</h3>
+          <p>{{ 'help_center.category_shipping_desc' | transloco }}</p>
+        </div>
+      </a>
+
+      <a routerLink="/user/return-policy">
+        <i class="fa-solid fa-arrow-rotate-left"></i>
+        <div>
+          <h3>{{ 'help_center.category_returns' | transloco }}</h3>
+          <p>{{ 'help_center.category_returns_desc' | transloco }}</p>
+        </div>
+      </a>
+
+      <a routerLink="/user/payment">
+        <i class="fa-solid fa-wallet"></i>
+        <div>
+          <h3>{{ 'help_center.category_payment' | transloco }}</h3>
+          <p>{{ 'help_center.category_payment_desc' | transloco }}</p>
+        </div>
+      </a>
+
+      <a routerLink="/user/user-account/profile-settings">
+        <i class="fa-solid fa-user-lock"></i>
+        <div>
+          <h3>{{ 'help_center.category_account' | transloco }}</h3>
+          <p>{{ 'help_center.category_account_desc' | transloco }}</p>
+        </div>
+      </a>
+
+      <a routerLink="/user/terms-of-use">
+        <i class="fa-solid fa-file-lines"></i>
+        <div>
+          <h3>{{ 'help_center.category_terms' | transloco }}</h3>
+          <p>{{ 'help_center.category_terms_desc' | transloco }}</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="support-cta">
+    <div class="support-icon">
+      <i class="fa-solid fa-headset"></i>
+    </div>
+
+    <div class="support-content">
+      <h2>{{ 'help_center.contact_title' | transloco }}</h2>
+
+      <p>
+        {{ 'help_center.contact_desc' | transloco }}
+      </p>
+    </div>
+
+    <div class="support-actions">
+      <a routerLink="/user/contact" class="primary-btn">
+        {{ 'help_center.contact_support' | transloco }}
+      </a>
+    </div>
+  </section>
+</section>

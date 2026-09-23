@@ -1,0 +1,80 @@
+<div class="faq-page">
+  <!-- Hero & Search Section -->
+  <section class="faq-hero">
+    <span class="hero-badge">
+      <i class="fa-solid fa-circle-question"></i>
+      {{ 'faq.badge' | transloco }}
+    </span>
+    <h1 [innerHTML]="'faq.hero_title' | transloco"></h1>
+    <p>{{ 'faq.hero_desc' | transloco }}</p>
+
+    <!-- Live Search Input -->
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" [value]="searchQuery()" (input)="onSearchInput($event)"
+        [placeholder]="'faq.search_placeholder' | transloco" />
+      @if (searchQuery()) {
+        <button class="clear-btn" (click)="clearSearch()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      }
+    </div>
+  </section>
+
+  <!-- Category Filter Tabs -->
+  <div class="categories-tabs">
+    @for (cat of categories; track cat.id) {
+      <button class="tab-btn" [class.active]="selectedCategory() === cat.id"(click)="setCategory(cat.id)">
+        <i [class]="cat.icon"></i>
+        <span>{{ 'faq.categories.' + cat.id | transloco }}</span>
+      </button>
+    }
+  </div>
+
+  <!-- FAQ Accordion List -->
+  <div class="faq-list">
+    @for (faq of filteredFaqs(); track faq.id; let index = $index) {
+      <div class="faq-item" [class.open]="openFaqId() === faq.id">
+        <button class="faq-question" (click)="toggleFaq(faq.id)">
+          <div class="question-title">
+            <i class="fa-regular fa-comments question-icon"></i>
+            <span>{{ 'faq.items.' + faq.id + '.question' | transloco }}</span>
+          </div>
+          <div class="toggle-icon">
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        </button>
+
+        @if (openFaqId() === faq.id) {
+          <div class="faq-answer">
+            <p>{{ 'faq.items.' + faq.id + '.answer' | transloco }}</p>
+          </div>
+        }
+      </div>
+    } @empty {
+      <div class="empty-state">
+        <i class="fa-solid fa-magnifying-glass-minus"></i>
+        <h3>{{ 'faq.empty_title' | transloco }}</h3>
+        <p>{{ 'faq.empty_desc' | transloco }}</p>
+        <button class="btn-reset" (click)="resetFilters()">
+          {{ 'faq.btn_reset' | transloco }}
+        </button>
+      </div>
+    }
+  </div>
+
+  <!-- Still Have Questions CTA -->
+  <section class="cta-box">
+    <div class="cta-icon">
+      <i class="fa-solid fa-headset"></i>
+    </div>
+    <div class="cta-content">
+      <h3>{{ 'faq.cta_title' | transloco }}</h3>
+      <p>{{ 'faq.cta_desc' | transloco }}</p>
+    </div>
+    <a routerLink="/user/contact" class="btn-cta">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>{{ 'faq.btn_contact' | transloco }}</span>
+    </a>
+  </section>
+</div>

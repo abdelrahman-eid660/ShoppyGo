@@ -1,0 +1,173 @@
+<div class="contact-page">
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="hero-content">
+      <span class="hero-badge">
+        <i class="fa-solid fa-headset"></i>
+        {{ 'call_us.badge' | transloco }}
+      </span>
+      <h1 [innerHTML]="'call_us.hero_title' | transloco"></h1>
+      <p>{{ 'call_us.hero_desc' | transloco }}</p>
+    </div>
+  </section>
+
+  <div class="contact-container">
+    <!-- Form Side -->
+    <div class="form-card">
+      <div class="card-header">
+        <h2>{{ 'call_us.form_title' | transloco }}</h2>
+        <p>{{ 'call_us.form_subtitle' | transloco }}</p>
+      </div>
+
+      <!-- Success Alert -->
+      @if (submitSuccess()) {
+        <div class="alert alert-success">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>{{ 'call_us.success_message' | transloco }}</span>
+        </div>
+      }
+
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+        <div class="form-grid">
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="fullName">{{ 'call_us.label_name' | transloco }} *</label>
+            <div class="input-wrapper" [class.has-error]="isFieldInvalid('fullName')">
+              <i class="fa-solid fa-user"></i>
+              <input
+                id="fullName"
+                type="text"
+                formControlName="fullName"
+                [placeholder]="'call_us.placeholder_name' | transloco" />
+            </div>
+            @if (isFieldInvalid('fullName')) {
+              <span class="error-text">{{ 'call_us.error_name' | transloco }}</span>
+            }
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label for="phone">{{ 'call_us.label_phone' | transloco }} *</label>
+            <div class="input-wrapper" [class.has-error]="isFieldInvalid('phone')">
+              <i class="fa-solid fa-phone"></i>
+              <input
+                id="phone"
+                type="tel"
+                formControlName="phone"
+                [placeholder]="'call_us.placeholder_phone' | transloco" />
+            </div>
+            @if (isFieldInvalid('phone')) {
+              <span class="error-text">{{ 'call_us.error_phone' | transloco }}</span>
+            }
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">{{ 'call_us.label_email' | transloco }} *</label>
+            <div class="input-wrapper" [class.has-error]="isFieldInvalid('email')">
+              <i class="fa-solid fa-envelope"></i>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                [placeholder]="'call_us.placeholder_email' | transloco" />
+            </div>
+            @if (isFieldInvalid('email')) {
+              <span class="error-text">{{ 'call_us.error_email' | transloco }}</span>
+            }
+          </div>
+
+          <!-- Subject Select -->
+          <div class="form-group">
+            <label for="subject">{{ 'call_us.label_subject' | transloco }} *</label>
+            <div class="input-wrapper" [class.has-error]="isFieldInvalid('subject')">
+              <i class="fa-solid fa-layer-group"></i>
+              <select id="subject" formControlName="subject">
+                <option value="">{{ 'call_us.select_subject' | transloco }}</option>
+                <option value="general">{{ 'call_us.subj_general' | transloco }}</option>
+                <option value="order">{{ 'call_us.subj_order' | transloco }}</option>
+                <option value="shipping">{{ 'call_us.subj_shipping' | transloco }}</option>
+                <option value="complaint">{{ 'call_us.subj_complaint' | transloco }}</option>
+              </select>
+            </div>
+            @if (isFieldInvalid('subject')) {
+              <span class="error-text">{{ 'call_us.error_subject' | transloco }}</span>
+            }
+          </div>
+
+          <!-- Message -->
+          <div class="form-group full-width">
+            <label for="message">{{ 'call_us.label_message' | transloco }} *</label>
+            <div class="input-wrapper textarea-wrapper" [class.has-error]="isFieldInvalid('message')">
+              <i class="fa-solid fa-comment-dots"></i>
+              <textarea
+                id="message"
+                rows="5"
+                formControlName="message"
+                [placeholder]="'call_us.placeholder_message' | transloco"></textarea>
+            </div>
+            @if (isFieldInvalid('message')) {
+              <span class="error-text">{{ 'call_us.error_message' | transloco }}</span>
+            }
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" [disabled]="isSubmitting()">
+          @if (isSubmitting()) {
+            <i class="fa-solid fa-spinner fa-spin"></i>
+            <span>{{ 'call_us.btn_sending' | transloco }}</span>
+          } @else {
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>{{ 'call_us.btn_send' | transloco }}</span>
+          }
+        </button>
+      </form>
+    </div>
+
+    <!-- Info Side -->
+    <div class="info-sidebar">
+      <div class="info-card">
+        <div class="icon-box">
+          <i class="fa-solid fa-phone-volume"></i>
+        </div>
+        <div class="info-content">
+          <h4>{{ 'call_us.info_phone_title' | transloco }}</h4>
+          <p dir="ltr">+20 101 234 5678</p>
+          <span>{{ 'call_us.info_phone_sub' | transloco }}</span>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="icon-box">
+          <i class="fa-solid fa-paper-plane"></i>
+        </div>
+        <div class="info-content">
+          <h4>{{ 'call_us.info_email_title' | transloco }}</h4>
+          <p>support&#64;shoppygo.com</p>
+          <span>{{ 'call_us.info_email_sub' | transloco }}</span>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="icon-box">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div class="info-content">
+          <h4>{{ 'call_us.info_address_title' | transloco }}</h4>
+          <p>{{ 'call_us.info_address_val' | transloco }}</p>
+          <span>{{ 'call_us.info_address_sub' | transloco }}</span>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="icon-box">
+          <i class="fa-solid fa-clock"></i>
+        </div>
+        <div class="info-content">
+          <h4>{{ 'call_us.info_hours_title' | transloco }}</h4>
+          <p>{{ 'call_us.info_hours_val' | transloco }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

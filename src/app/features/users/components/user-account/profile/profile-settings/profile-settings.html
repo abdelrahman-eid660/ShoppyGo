@@ -1,0 +1,289 @@
+<div class="settings-container">
+  <!-- Page Header -->
+  <div class="settings-header">
+    <h1 class="header-title">{{ 'profile.profile_settings.title' | transloco }}</h1>
+    <p class="header-subtitle">{{ 'profile.profile_settings.subtitle' | transloco }}</p>
+  </div>
+
+  <!-- Alert Notifications -->
+  @if (successMessage()) {
+    <div class="alert alert-success">
+      <i class="fa-solid fa-circle-check"></i>
+      <span>{{ successMessage() }}</span>
+    </div>
+  }
+
+  @if (errorMessage()) {
+    <div class="alert alert-danger">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <span>{{ errorMessage() }}</span>
+    </div>
+  }
+
+  <!-- Settings Layout Grid (Sidebar Navigation + Content) -->
+  <div class="settings-grid">
+
+    <!-- Navigation Tabs Sidebar -->
+    <aside class="settings-sidebar">
+      <nav class="nav-menu">
+        <button
+          type="button"
+          class="nav-item"
+          [class.active]="activeTab() === 'general'"
+          (click)="setTab('general')">
+          <i class="fa-regular fa-user"></i>
+          <span>{{ 'profile.profile_settings.tabs.general' | transloco }}</span>
+        </button>
+
+        <button
+          type="button"
+          class="nav-item"
+          [class.active]="activeTab() === 'security'"
+          (click)="setTab('security')">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>{{ 'profile.profile_settings.tabs.security' | transloco }}</span>
+        </button>
+
+        <button
+          type="button"
+          class="nav-item"
+          [class.active]="activeTab() === 'notifications'"
+          (click)="setTab('notifications')">
+          <i class="fa-regular fa-bell"></i>
+          <span>{{ 'profile.profile_settings.tabs.notifications' | transloco }}</span>
+        </button>
+      </nav>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <main class="settings-content">
+
+      <!-- ============================================= -->
+      <!-- TAB 1: General Information & Profile Picture  -->
+      <!-- ============================================= -->
+      @if (activeTab() === 'general') {
+        <section class="card-section">
+          <h2 class="card-title">{{ 'profile.profile_settings.general.title' | transloco }}</h2>
+          <p class="card-desc">{{ 'profile.profile_settings.general.desc' | transloco }}</p>
+
+          <!-- Avatar Uploader -->
+          <div class="avatar-upload-wrapper">
+            <div class="avatar-preview">
+              <img [src]="avatarPreview()" alt="Profile Picture" />
+              <label for="avatarInput" class="btn-upload-overlay" [attr.title]="'profile.profile_settings.general.change_photo' | transloco">
+                <i class="fa-solid fa-camera"></i>
+              </label>
+              <input type="file" id="avatarInput" accept="image/*" (change)="onAvatarSelected($event)" hidden />
+            </div>
+            <div class="avatar-info">
+              <p class="avatar-title">{{ 'profile.profile_settings.general.photo_requirements' | transloco }}</p>
+              <p class="avatar-subtitle">JPG, PNG or WEBP. Max size 2MB.</p>
+            </div>
+          </div>
+
+          <!-- General Form -->
+          <form [formGroup]="generalForm" (ngSubmit)="saveGeneralInfo()" class="settings-form">
+            <div class="form-grid-2">
+
+              <!-- Full Name -->
+              <div class="form-group">
+                <label for="fullName">{{ 'profile.profile_settings.general.full_name' | transloco }}</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-user input-icon"></i>
+                  <input type="text" id="fullName" formControlName="fullName" placeholder="اسمك الكامل" />
+                </div>
+                @if (generalForm.get('fullName')?.touched && generalForm.get('fullName')?.invalid) {
+                  <span class="field-error">{{ 'profile.profile_settings.errors.required' | transloco }}</span>
+                }
+              </div>
+
+              <!-- Job Title -->
+              <div class="form-group">
+                <label for="jobTitle">{{ 'profile.profile_settings.general.job_title' | transloco }}</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-briefcase input-icon"></i>
+                  <input type="text" id="jobTitle" formControlName="jobTitle" placeholder="المسمى الوظيفي" />
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email">{{ 'profile.profile_settings.general.email' | transloco }}</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-envelope input-icon"></i>
+                  <input type="email" id="email" formControlName="email" placeholder="name@example.com" />
+                </div>
+                @if (generalForm.get('email')?.touched && generalForm.get('email')?.invalid) {
+                  <span class="field-error">{{ 'profile.profile_settings.errors.email_invalid' | transloco }}</span>
+                }
+              </div>
+
+              <!-- Phone -->
+              <div class="form-group">
+                <label for="phone">{{ 'profile.profile_settings.general.phone' | transloco }}</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-phone input-icon"></i>
+                  <input type="tel" id="phone" formControlName="phone" placeholder="01012345678" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Bio -->
+            <div class="form-group">
+              <label for="bio">{{ 'profile.profile_settings.general.bio' | transloco }}</label>
+              <textarea id="bio" formControlName="bio" rows="4" placeholder="اكتب نبذة قصيرة عنك..."></textarea>
+            </div>
+
+            <!-- Actions -->
+            <div class="form-actions">
+              <button type="submit" class="btn-primary" [disabled]="isSavingGeneral()">
+                @if (isSavingGeneral()) {
+                  <i class="fa-solid fa-spinner fa-spin"></i>
+                } @else {
+                  <i class="fa-solid fa-check"></i>
+                }
+                <span>{{ 'profile.profile_settings.actions.save_changes' | transloco }}</span>
+              </button>
+            </div>
+          </form>
+        </section>
+      }
+
+      <!-- ============================================= -->
+      <!-- TAB 2: Security & Password                     -->
+      <!-- ============================================= -->
+      @if (activeTab() === 'security') {
+        <section class="card-section">
+          <h2 class="card-title">{{ 'profile.profile_settings.security.title' | transloco }}</h2>
+          <p class="card-desc">{{ 'profile.profile_settings.security.desc' | transloco }}</p>
+
+          <form [formGroup]="securityForm" (ngSubmit)="updatePassword()" class="settings-form">
+            <!-- Current Password -->
+            <div class="form-group">
+              <label for="currentPassword">{{ 'profile.profile_settings.security.current_password' | transloco }}</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-lock input-icon"></i>
+                <input type="password" id="currentPassword" formControlName="currentPassword" placeholder="••••••••" />
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <!-- New Password -->
+              <div class="form-group">
+                <label for="newPassword">{{ 'profile.profile_settings.security.new_password' | transloco }}</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-key input-icon"></i>
+                  <input type="password" id="newPassword" formControlName="newPassword" placeholder="••••••••" />
+                </div>
+                @if (securityForm.get('newPassword')?.touched && securityForm.get('newPassword')?.invalid) {
+                  <span class="field-error">{{ 'profile.profile_settings.errors.password_min' | transloco }}</span>
+                }
+              </div>
+
+              <!-- Confirm Password -->
+              <div class="form-group">
+                <label for="confirmPassword">{{ 'profile.profile_settings.security.confirm_password' | transloco }}</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-key input-icon"></i>
+                  <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="••••••••" />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary" [disabled]="isSavingSecurity()">
+                @if (isSavingSecurity()) {
+                  <i class="fa-solid fa-spinner fa-spin"></i>
+                } @else {
+                  <i class="fa-solid fa-shield-check"></i>
+                }
+                <span>{{ 'profile.profile_settings.security.update_btn' | transloco }}</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Danger Zone: Delete Account -->
+          <div class="danger-zone-card">
+            <div class="danger-info">
+              <h4>{{ 'profile.profile_settings.security.delete_account' | transloco }}</h4>
+              <p>{{ 'profile.profile_settings.security.delete_account_desc' | transloco }}</p>
+            </div>
+            <button type="button" class="btn-danger">
+              <i class="fa-regular fa-trash-can"></i>
+              <span>{{ 'profile.profile_settings.security.delete_btn' | transloco }}</span>
+            </button>
+          </div>
+        </section>
+      }
+
+      <!-- ============================================= -->
+      <!-- TAB 3: Notifications & Language Preferences    -->
+      <!-- ============================================= -->
+      @if (activeTab() === 'notifications') {
+        <section class="card-section">
+          <h2 class="card-title">{{ 'profile.profile_settings.preferences.title' | transloco }}</h2>
+          <p class="card-desc">{{ 'profile.profile_settings.preferences.desc' | transloco }}</p>
+
+          <form [formGroup]="notificationForm" class="settings-form">
+
+            <!-- Language Selection -->
+            <div class="preference-row">
+              <div class="pref-meta">
+                <h4>{{ 'profile.profile_settings.preferences.language' | transloco }}</h4>
+                <p>{{ 'profile.profile_settings.preferences.language_desc' | transloco }}</p>
+              </div>
+              <div class="lang-switch-btns">
+                <button type="button" class="lang-btn" (click)="switchLanguage('ar')">العربية</button>
+                <button type="button" class="lang-btn" (click)="switchLanguage('en')">English</button>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Email Orders Toggle -->
+            <div class="toggle-switch-row">
+              <div class="pref-meta">
+                <h4>{{ 'profile.profile_settings.preferences.email_orders' | transloco }}</h4>
+                <p>{{ 'profile.profile_settings.preferences.email_orders_desc' | transloco }}</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" formControlName="emailOrders" />
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Promotional Emails Toggle -->
+            <div class="toggle-switch-row">
+              <div class="pref-meta">
+                <h4>{{ 'profile.profile_settings.preferences.email_promos' | transloco }}</h4>
+                <p>{{ 'profile.profile_settings.preferences.email_promos_desc' | transloco }}</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" formControlName="emailPromos" />
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- SMS Notifications -->
+            <div class="toggle-switch-row">
+              <div class="pref-meta">
+                <h4>{{ 'profile.profile_settings.preferences.sms_notif' | transloco }}</h4>
+                <p>{{ 'profile.profile_settings.preferences.sms_notif_desc' | transloco }}</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" formControlName="smsNotifications" />
+                <span class="slider"></span>
+              </label>
+            </div>
+
+          </form>
+        </section>
+      }
+
+    </main>
+  </div>
+</div>

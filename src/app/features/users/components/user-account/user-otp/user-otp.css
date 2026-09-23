@@ -1,0 +1,229 @@
+.auth-page {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  background-color: var(--body-background);
+  color: var(--reverse-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--surface-background);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Header */
+.auth-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.logo-badge {
+  width: 56px;
+  height: 56px;
+  background: var(--form-background);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto 16px;
+}
+
+.auth-header h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 8px;
+}
+
+.auth-header p {
+  font-size: 14px;
+  color: var(--parag-color);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.user-email {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-inline-start: 4px;
+}
+
+/* Error Alert */
+.alert-error {
+  background-color: rgba(230, 57, 70, 0.1);
+  border: 1px solid rgba(230, 57, 70, 0.3);
+  color: #e63946;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Form & OTP Inputs */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.otp-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.otp-input {
+  width: 52px;
+  height: 60px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+  background: var(--form-background);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.otp-input:focus {
+  border-color: var(--text-secondary);
+  box-shadow: 0 0 0 3px rgba(var(--text-secondary-rgb, 66, 133, 244), 0.15);
+  background: var(--surface-background);
+}
+
+.otp-input.has-value {
+  border-color: var(--text-primary);
+  background: var(--surface-background);
+}
+
+/* Resend & Timer */
+.resend-container {
+  text-align: center;
+  margin: 4px 0;
+}
+
+.resend-text, .timer-text {
+  font-size: 13px;
+  color: var(--parag-color);
+  margin: 0;
+}
+
+.btn-resend {
+  background: none;
+  border: none;
+  color: var(--text-primary) !important;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 7px 10px;
+  font-family: inherit;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+  border-radius: 10px;
+  margin-inline-start: 5px;
+}
+
+.btn-resend:hover {
+  color: var(--text-secondary);
+}
+
+.timer-badge {
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--form-background);
+  border: 1px solid var(--border-color);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-inline-start: 4px;
+}
+
+/* Submit Button */
+.btn-submit {
+  width: 100%;
+  padding: 13px;
+  background: var(--text-primary);
+  color: var(--white-color);
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.btn-submit:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Footer Link */
+.auth-footer {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.auth-footer p {
+  font-size: 13px;
+  margin: 0;
+}
+
+.back-link {
+  color: var(--parag-color) !important;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--text-primary);
+}
+
+[dir="rtl"] .flip-icon {
+  transform: scaleX(-1);
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 28px 20px;
+  }
+
+  .otp-input {
+    width: 44px;
+    height: 52px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+}

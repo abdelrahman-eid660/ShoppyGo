@@ -1,0 +1,105 @@
+<div class="about-page">
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="hero-badge">
+      <i class="fa-solid fa-store"></i>
+      {{ 'about_us.badge' | transloco }}
+    </div>
+    <h1 [innerHTML]="'about_us.hero_title' | transloco"></h1>
+    <p>{{ 'about_us.hero_desc' | transloco }}</p>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="stats-grid">
+    @for (stat of stats(); track stat.key) {
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i [class]="stat.icon"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-number">{{ stat.value }}</span>
+          <span class="stat-label">{{ 'about_us.stats.' + stat.key | transloco }}</span>
+        </div>
+      </div>
+    }
+  </section>
+
+  <!-- Mission & Vision Cards -->
+  <section class="mission-vision-grid">
+    <div class="info-card highlight">
+      <div class="card-icon">
+        <i class="fa-solid fa-bullseye"></i>
+      </div>
+      <h3>{{ 'about_us.mission_title' | transloco }}</h3>
+      <p>{{ 'about_us.mission_desc' | transloco }}</p>
+    </div>
+
+    <div class="info-card">
+      <div class="card-icon">
+        <i class="fa-solid fa-eye"></i>
+      </div>
+      <h3>{{ 'about_us.vision_title' | transloco }}</h3>
+      <p>{{ 'about_us.vision_desc' | transloco }}</p>
+    </div>
+  </section>
+
+  <!-- Features / Why Choose Us -->
+  <section class="why-us-section">
+    <div class="section-header">
+      <h2>{{ 'about_us.why_title' | transloco }}</h2>
+      <p>{{ 'about_us.why_subtitle' | transloco }}</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fa-solid fa-truck-fast"></i>
+        </div>
+        <h4>{{ 'about_us.feat1_title' | transloco }}</h4>
+        <p>{{ 'about_us.feat1_desc' | transloco }}</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fa-solid fa-warehouse"></i>
+        </div>
+        <h4>{{ 'about_us.feat2_title' | transloco }}</h4>
+        <p>{{ 'about_us.feat2_desc' | transloco }}</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h4>{{ 'about_us.feat3_title' | transloco }}</h4>
+        <p>{{ 'about_us.feat3_desc' | transloco }}</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+        <h4>{{ 'about_us.feat4_title' | transloco }}</h4>
+        <p>{{ 'about_us.feat4_desc' | transloco }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="cta-content">
+      <h2>{{ 'about_us.cta_title' | transloco }}</h2>
+      <p>{{ 'about_us.cta_desc' | transloco }}</p>
+    </div>
+    <div class="cta-actions">
+      <a routerLink="/user/store" class="btn-cta-primary">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>{{ 'about_us.btn_shop' | transloco }}</span>
+      </a>
+      <a routerLink="/user/contact" class="btn-cta-secondary">
+        <i class="fa-solid fa-envelope"></i>
+        <span>{{ 'about_us.btn_contact' | transloco }}</span>
+      </a>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,67 @@
+<div class="not-found-page">
+  <div class="not-found-card">
+    <!-- Visual 404 Illustration with Animation -->
+    <div class="visual-container">
+      <div class="glow-effect"></div>
+      <div class="error-code">
+        <span>4</span>
+
+        <span class="shopping-icon">
+          <i class="fa-solid fa-box-open"></i>
+        </span>
+
+        <span>4</span>
+      </div>
+    </div>
+
+    <!-- Error Content -->
+    <div class="content-container">
+      <span class="error-badge">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        {{ 'not_found.badge' | transloco }}
+      </span>
+
+      <h1 [innerHTML]="'not_found.title' | transloco"></h1>
+      <p>{{ 'not_found.desc' | transloco }}</p>
+
+      <!-- Main Action Buttons -->
+      <div class="actions-wrapper">
+        <a routerLink="/user" class="btn-primary">
+          <i class="fa-solid fa-house"></i>
+          <span>{{ 'not_found.btn_home' | transloco }}</span>
+        </a>
+
+        <button class="btn-secondary" (click)="goBack()">
+          <i class="fa-solid fa-arrow-right-from-bracket rotate-rtl"></i>
+          <span>{{ 'not_found.btn_back' | transloco }}</span>
+        </button>
+      </div>
+
+      <!-- Quick Navigation Grid -->
+      <div class="quick-links-section">
+        <span class="quick-title">{{ 'not_found.quick_links_title' | transloco }}</span>
+        <div class="quick-links-grid">
+          <a routerLink="/user/store" class="quick-link-item">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>{{ 'not_found.link_products' | transloco }}</span>
+          </a>
+
+          <a routerLink="/user/our-address" class="quick-link-item">
+            <i class="fa-solid fa-store"></i>
+            <span>{{ 'not_found.link_branches' | transloco }}</span>
+          </a>
+
+          <a routerLink="/user/offers" class="quick-link-item">
+            <i class="fa-solid fa-tags"></i>
+            <span>{{ 'not_found.link_offers' | transloco }}</span>
+          </a>
+
+          <a routerLink="/user/contact" class="quick-link-item">
+            <i class="fa-solid fa-headset"></i>
+            <span>{{ 'not_found.link_support' | transloco }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

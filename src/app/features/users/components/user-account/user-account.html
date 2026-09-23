@@ -1,0 +1,97 @@
+<div class="profile-layout-wrapper">
+  <!-- Header للشاشات الصغيرة (Mobile / Tablet) -->
+  <header class="mobile-topbar">
+    <button type="button" class="btn-sidebar-toggle" (click)="toggleSidebar()" aria-label="Toggle Sidebar">
+      <i class="fa-solid fa-bars-staggered"></i>
+    </button>
+    <span class="mobile-page-title">{{ 'profile.dashboard' | transloco }}</span>
+  </header>
+
+  <!-- Overlay للشاشات الصغيرة عند فتح الـ Sidebar -->
+  @if (isSidebarOpen()) {
+    <div class="sidebar-backdrop" (click)="closeSidebar()"></div>
+  }
+
+  <!-- Container الرئيسي المقسم بنسبة 25% إلى 75% -->
+  <div class="profile-grid-container">
+
+    <!-- Sidebar Area (25%) -->
+    <aside class="profile-sidebar" [class.is-open]="isSidebarOpen()">
+      <div class="shorts">
+        <button class="btn btn-outline-info my-1" (click)="themeService.toggleTheme()">
+          {{themeService.currentTheme() === 'dark' ? '🌙' : '☀️'}}
+        </button>
+        <button class="btn btn-outline-info my-1" (click)="translocoService.toggleButton()">
+          {{translocoService.currentLanguage() === 'ar' ? 'عربي' : 'EN'}}
+        </button>
+        </div>
+      <!-- User Information -->
+      <div class="sidebar-user-info">
+        <div class="user-avatar">
+          <img [src]="userInfo().avatar" [alt]="userInfo().name" />
+          <span class="online-status"></span>
+        </div>
+        <div class="user-meta">
+          <h2 class="user-name">{{ userInfo().name }}</h2>
+          <p class="user-email">{{ userInfo().email }}</p>
+        </div>
+        <div class="user-badge">
+          <i class="fa-solid fa-crown"></i>
+          <span>{{ 'profile.vip_member' | transloco }}</span>
+        </div>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <!-- Navigation Links -->
+      <nav class="sidebar-menu">
+        <!-- 1. General Tab -->
+        <a
+          routerLink="/user/user-account/general"
+          routerLinkActive="active-tab"
+          (click)="closeSidebar()"
+          class="menu-item">
+          <div class="icon-wrapper"><i class="fa-solid fa-chart-pie"></i></div>
+          <span class="menu-label">{{ 'profile.nav.general' | transloco }}</span>
+        </a>
+
+        <!-- 2. My Orders Tab -->
+        <a
+          routerLink="/user/user-account/my-orders"
+          routerLinkActive="active-tab"
+          (click)="closeSidebar()"
+          class="menu-item">
+          <div class="icon-wrapper"><i class="fa-solid fa-box-archive"></i></div>
+          <span class="menu-label">{{ 'profile.nav.orders' | transloco }}</span>
+          @if (activeOrdersCount() > 0) {
+            <span class="badge-count">{{ activeOrdersCount() }}</span>
+          }
+        </a>
+
+        <!-- 4. Settings Tab -->
+        <a
+          routerLink="/user/user-account/profile-settings"
+          routerLinkActive="active-tab"
+          (click)="closeSidebar()"
+          class="menu-item">
+          <div class="icon-wrapper"><i class="fa-solid fa-sliders"></i></div>
+          <span class="menu-label">{{ 'profile.nav.settings' | transloco }}</span>
+        </a>
+      </nav>
+
+      <!-- Sidebar Footer / Logout -->
+      <div class="sidebar-footer">
+        <button type="button" class="btn-logout" (click)="onLogout()">
+          <i class="fa-solid fa-arrow-right-from-bracket flip-icon"></i>
+          <span>{{ 'profile.nav.logout' | transloco }}</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area (75%) -->
+    <main class="profile-content">
+      <router-outlet></router-outlet>
+    </main>
+
+  </div>
+</div>

@@ -1,0 +1,1107 @@
+{
+  "hello": "Welcome to ShoppyGo",
+  "FAQ": "FAQ",
+  "facebook": "facebook",
+  "instagram": "instagram",
+  "x-twitter": "x-twitter",
+  "login or register": "login or register",
+  "My Account": "My Account",
+  "searching in products": "searching in products...",
+  "select category": "select category",
+  "support": "support",
+  "order tracking": "order tracking",
+  "the store": "store",
+  "brands": "brands",
+  "categories": "categories",
+  "contact": "contact",
+  "about": "about us",
+  "Home Appliances": "Home Appliances",
+  "Entertainment": "Entertainment",
+  "Sports": "Sports",
+  "Super Market": "Super Market",
+  "Electronics": "Electronics",
+  "Furniture": "Furniture",
+  "Clothes": "Clothes",
+  "Supplements": "Supplements",
+  "Payment Ways": "Payment Ways",
+  "Help Center": "Help Center",
+  "Your Account": "Your Account",
+  "privacy policy": "privacy policy",
+  "Return Policy": "Return Policy",
+  "Terms and Conditions": "Terms and Conditions",
+  "Our Addresses": "Our Addresses",
+  "registration": "registration",
+  "Shipping and handling": "Shipping and handling",
+  "Return Request": "Return Request",
+  "terms of use": "terms of use",
+  "Quick Access": "Quick Access",
+  "Contact With Us": "Contact With Us",
+  "Best Items": "Best Items",
+  "shipping": {
+    "badge": "Shipping & Delivery",
+    "hero_title": "Delivering your orders<br />with ease and safety",
+    "hero_desc": "At ShoppyGo, we ensure your order reaches you quickly and safely, from order confirmation right to your doorstep.",
+    "delivery_days": "2–5 Days",
+    "delivery_duration": "Delivery Time",
+    "all_egypt": "All Egypt",
+    "covering_all": "Covering all governorates",
+    "order_on_the_way": "Order is on the way",
+    "safe_delivery": "Safe Delivery",
+    "shipping_methods": "Shipping Methods",
+    "choose_suitable_method": "Choose the right method for you",
+    "methods_desc": "We provide flexible shipping options to ensure your orders arrive in the fastest and most convenient way.",
+    "standard_shipping": "Standard Shipping",
+    "most_popular": "Most Popular",
+    "standard_desc": "Your order is delivered to the specified address during checkout within the expected timeframe.",
+    "working_days": "2–5 Business Days",
+    "shipping_fee_amount": "50 EGP",
+    "free_shipping": "Free Shipping",
+    "special_offers": "Special Offers",
+    "free_desc": "Enjoy free shipping during special campaigns and promotional offers on ShoppyGo.",
+    "according_to_offer": "Based on offer",
+    "no_shipping_fees": "No shipping fees",
+    "how_delivery_works": "How Delivery Works",
+    "order_in_4_steps": "Your order in 4 simple steps",
+    "process_desc": "From order confirmation to delivery, we ensure a smooth and transparent shopping experience.",
+    "step1_title": "Order Confirmation",
+    "step1_desc": "Complete your order and select your delivery address and preferred payment method.",
+    "step2_title": "Order Processing",
+    "step2_desc": "Our team carefully prepares and packages your items for shipment.",
+    "step3_title": "Shipping",
+    "step3_desc": "Your order is handed over to our shipping partner for delivery.",
+    "step4_title": "Order Receiving",
+    "step4_desc": "Your package arrives at your door and you can pay on delivery.",
+    "info_label": "Shipping Information",
+    "info_title": "Everything you need to know",
+    "info_title_span": "about delivery",
+    "info_desc": "At ShoppyGo, we strive to offer a simple and reliable delivery experience across all Egyptian governorates through our trusted partners.",
+    "delivery_duration_title": "Delivery Duration",
+    "delivery_duration_desc": "2 to 5 business days depending on delivery location.",
+    "shipping_fees_title": "Shipping Fees",
+    "shipping_fees_desc": "Current shipping fee is 50 EGP per order, with free shipping promotions available periodically.",
+    "delivery_areas_title": "Delivery Areas",
+    "delivery_areas_desc": "We deliver to all governorates across Egypt.",
+    "your_order_on_way": "Your order is on its way",
+    "order_prepared": "Order Prepared",
+    "delivering_now": "Out for Delivery",
+    "payment_method": "Payment Method",
+    "cod_available": "Cash on Delivery Available",
+    "cod_desc": "You can select Cash on Delivery during checkout and pay for your items and shipping upon arrival.",
+    "available": "Available",
+    "track_your_order": "Track Your Order",
+    "know_where_order_is": "Track your order status",
+    "tracking_desc": "Once your order is shipped, you can track its status and updates directly from your ShoppyGo account.",
+    "track_my_orders_btn": "Track My Orders",
+    "faq_subtitle": "FAQ",
+    "have_question": "Have a Question?",
+    "faq_desc": "Here are answers to the most frequently asked questions about shipping and delivery.",
+    "faq1_q": "How long does delivery take?",
+    "faq1_a": "Delivery usually takes 2 to 5 business days, depending on your governorate and address.",
+    "faq2_q": "How much is the shipping fee?",
+    "faq2_a": "The current shipping fee is 50 EGP per order. Special free shipping offers may apply during promotional periods.",
+    "faq3_q": "Is free shipping available?",
+    "faq3_a": "Yes, ShoppyGo offers promotional campaigns with free shipping on select orders or products according to offer terms.",
+    "faq4_q": "Is Cash on Delivery available?",
+    "faq4_a": "Yes, you can choose Cash on Delivery if available for your order and delivery area.",
+    "faq5_q": "Do you deliver to all Egyptian governorates?",
+    "faq5_a": "Yes, we provide delivery services across all governorates in Egypt.",
+    "faq6_q": "Can I track my order?",
+    "faq6_a": "Yes, you can track your order status from the 'My Orders' section in your account after dispatch.",
+    "ready_to_order": "Ready to Order?",
+    "cta_desc": "Explore your favorite products and enjoy an effortless shopping experience with reliable delivery from ShoppyGo.",
+    "start_shopping": "Start Shopping"
+  },
+  "return_request": {
+    "badge": "Return Request",
+    "hero_title": "Return your order<br />with ease and confidence",
+    "hero_desc": "We want you to have the best shopping experience. If your purchase is not right for you, you can submit a return request within 14 days of receiving your order.",
+    "return_days": "14 Days",
+    "return_period": "Return period",
+    "free_return": "Free Return",
+    "return_shipping": "Return shipping is free",
+    "safe_return": "Safe Return",
+    "easy_process": "Easy Process",
+
+    "conditions_label": "Return Conditions",
+    "conditions_title": "Before submitting your return request",
+    "conditions_desc": "Please make sure your order meets the following return conditions to ensure a smooth and quick process.",
+
+    "condition_1_title": "Within 14 Days",
+    "condition_1_desc": "The return request must be submitted within 14 days from the date you receive the order.",
+
+    "condition_2_title": "Original Condition",
+    "condition_2_desc": "The product must be unused and returned in its original condition with its packaging and accessories.",
+
+    "condition_3_title": "Eligible Products",
+    "condition_3_desc": "Not all products are eligible for return. Eligibility may vary depending on the product category and its condition.",
+
+    "condition_4_title": "Non-Returnable Products",
+    "condition_4_desc": "Some products cannot be returned due to their nature or applicable return conditions.",
+
+    "how_it_works": "How It Works",
+    "return_in_steps": "Return your order in 4 simple steps",
+    "process_desc": "Our return process is designed to be simple, clear and easy to follow.",
+
+    "step1_title": "Select Your Order",
+    "step1_desc": "Choose the order and product you want to return from your orders list.",
+
+    "step2_title": "Submit Your Request",
+    "step2_desc": "Select the reason for the return and provide the required information.",
+
+    "step3_title": "Product Pickup",
+    "step3_desc": "After approval, our shipping partner will arrange the pickup of the product.",
+
+    "step4_title": "Get Your Refund",
+    "step4_desc": "After receiving and reviewing the product, your refund will be processed.",
+
+    "start_label": "Start Your Return",
+    "start_title": "Ready to return your order?",
+    "start_desc": "Select the order you want to return and follow the simple steps to submit your request.",
+    "select_order": "Select Order",
+    "select_order_desc": "Choose the order you want to return",
+    "select_reason": "Return Reason",
+    "select_reason_desc": "Tell us why you want to return it",
+    "common_reasons": "Common return reasons",
+    "reason_damaged": "Product is damaged",
+    "reason_wrong_item": "Wrong product received",
+    "reason_not_as_described": "Not as described",
+    "reason_size": "Size or color is not suitable",
+    "reason_not_needed": "I no longer need the product",
+    "start_button": "Start Return Request",
+
+    "refund_label": "Refund",
+    "refund_title": "How will you receive your refund?",
+    "refund_desc": "Once your return is approved and the product is received and reviewed, the refund amount can be sent using one of the available methods.",
+
+    "bank_transfer": "Bank Transfer",
+    "bank_transfer_desc": "Receive your refund directly through your bank account.",
+
+    "wallet": "Electronic Wallet",
+    "wallet_desc": "Receive your refund through a supported electronic wallet.",
+
+    "refund_amount": "Refund Processing",
+    "refund_after_approval": "After return approval and product review",
+    "refund_status": "Refund method available",
+
+    "tracking_label": "Return Tracking",
+    "tracking_title": "Track your return request",
+    "tracking_desc": "Follow every step of your return request directly from your ShoppyGo account.",
+    "track_button": "Track Return",
+
+    "status_submitted": "Request Submitted",
+    "status_review": "Under Review",
+    "status_pickup": "Product Pickup",
+    "status_received": "Product Received",
+    "status_refunded": "Refunded",
+
+    "faq_subtitle": "FAQ",
+    "have_question": "Have a Question?",
+    "faq_desc": "Here are answers to the most frequently asked questions about returns and refunds.",
+
+    "faq1_q": "How many days do I have to return a product?",
+    "faq1_a": "You can submit a return request within 14 days from the date you receive your order.",
+
+    "faq2_q": "Can I return a used product?",
+    "faq2_a": "No. The product must be unused and returned in its original condition with its original packaging and accessories.",
+
+    "faq3_q": "Are all products eligible for return?",
+    "faq3_a": "No. Some products may not be eligible for return depending on their category, nature or applicable return conditions.",
+
+    "faq4_q": "Is return shipping free?",
+    "faq4_a": "Yes. Return shipping is free for eligible return requests according to ShoppyGo's return conditions.",
+
+    "faq5_q": "How will I receive my refund?",
+    "faq5_a": "You can receive your refund through a bank transfer or a supported electronic wallet.",
+
+    "faq6_q": "Can I track my return request?",
+    "faq6_a": "Yes. You can track the status of your return request from your ShoppyGo account.",
+
+    "need_help": "Need help with your return?",
+    "need_help_desc": "If you have any questions about your return request, our support team is ready to help you.",
+    "contact_us": "Contact Us"
+  },
+  "terms": {
+    "badge": "Terms of Use",
+    "hero_title": "Simple rules for a<br />better shopping experience",
+    "hero_desc": "By using ShoppyGo, you agree to follow these terms and conditions. Please read them carefully to understand your rights and responsibilities when using our website.",
+
+    "overview_title": "Using ShoppyGo",
+    "overview_desc": "ShoppyGo is an e-commerce platform that allows you to browse products, place orders, choose available payment methods, and receive your purchases across Egypt.",
+
+    "account_title": "Account & Registration",
+    "account_desc": "Some features may require you to create an account. You are responsible for providing accurate information and keeping your account details secure.",
+    "account_point1": "You must provide correct and up-to-date information.",
+    "account_point2": "You are responsible for maintaining the confidentiality of your account.",
+    "account_point3": "You should notify us if you notice any unauthorized access to your account.",
+
+    "orders_title": "Orders & Purchases",
+    "orders_desc": "When you place an order through ShoppyGo, you agree that the information provided during checkout is accurate and complete.",
+    "orders_point1": "Orders are subject to product availability.",
+    "orders_point2": "We reserve the right to accept or cancel an order when necessary.",
+    "orders_point3": "Product prices and availability may change without prior notice.",
+    "orders_point4": "Order confirmation does not always guarantee final acceptance of the order.",
+
+    "payment_title": "Payment",
+    "payment_desc": "ShoppyGo supports the payment methods displayed during checkout, including Cash on Delivery when available for your order and delivery area.",
+    "payment_point1": "You must provide valid payment information when using electronic payment methods.",
+    "payment_point2": "Cash on Delivery is available only when shown as an option during checkout.",
+    "payment_point3": "Any applicable shipping fees or additional charges will be displayed before completing the order.",
+
+    "shipping_title": "Shipping & Delivery",
+    "shipping_desc": "We aim to deliver your orders safely and within the estimated delivery period. Delivery services are currently available across Egypt.",
+    "shipping_point1": "The estimated delivery time is usually 2–5 business days.",
+    "shipping_point2": "The standard shipping fee is currently 50 EGP per order.",
+    "shipping_point3": "Free shipping may be available during promotional offers.",
+    "shipping_point4": "Delivery times may vary depending on the delivery address and other circumstances.",
+
+    "returns_title": "Returns & Refunds",
+    "returns_desc": "Returns and refunds are handled according to ShoppyGo's Return Policy. Not all products are eligible for return or replacement.",
+    "returns_point1": "Return eligibility depends on the product and its condition.",
+    "returns_point2": "Some products may not be eligible for return or replacement.",
+    "returns_point3": "Refunds may be processed through a bank account or supported wallet when applicable.",
+    "returns_point4": "Return requests must follow the applicable return conditions and procedures.",
+
+    "product_title": "Product Information",
+    "product_desc": "We work to provide accurate product information, descriptions, prices, and images. However, some details may vary slightly from the actual product.",
+
+    "content_title": "Website Content",
+    "content_desc": "All content available on ShoppyGo, including text, images, logos, designs, and other materials, is protected by applicable intellectual property laws unless otherwise stated.",
+    "content_point1": "You may use the website for personal and lawful shopping purposes.",
+    "content_point2": "You may not copy, reproduce, modify, or distribute our content without permission.",
+    "content_point3": "You may not use the website for fraudulent, illegal, or harmful activities.",
+
+    "prohibited_title": "Prohibited Activities",
+    "prohibited_desc": "To keep ShoppyGo safe and reliable for everyone, the following activities are not allowed:",
+    "prohibited_point1": "Using the website for illegal purposes.",
+    "prohibited_point2": "Providing false or misleading information.",
+    "prohibited_point3": "Attempting to access accounts or systems without authorization.",
+    "prohibited_point4": "Interfering with the operation or security of the website.",
+    "prohibited_point5": "Using automated tools to collect or misuse website data without permission.",
+
+    "availability_title": "Website Availability",
+    "availability_desc": "We work to keep ShoppyGo available and functioning properly, but we cannot guarantee that the website will always be available without interruptions, errors, or maintenance periods.",
+
+    "liability_title": "Limitation of Liability",
+    "liability_desc": "ShoppyGo aims to provide a reliable shopping experience, but we are not responsible for losses resulting from circumstances beyond our reasonable control, including delivery delays, technical problems, or third-party services.",
+
+    "changes_title": "Changes to These Terms",
+    "changes_desc": "We may update these Terms of Use from time to time to reflect changes to our services, policies, or legal requirements. Updated terms will be published on this page.",
+
+    "contact_title": "Questions About These Terms?",
+    "contact_desc": "If you have any questions about these Terms of Use, please contact our support team through the available contact channels on ShoppyGo.",
+
+    "last_updated": "Last updated",
+    "updated_date": "2026",
+    "agree_message": "By continuing to use ShoppyGo, you acknowledge that you have read and understood these Terms of Use."
+  },
+  "help_center": {
+    "badge": "Help Center",
+    "hero_title": "How can we<br />help you today?",
+    "hero_desc": "Find answers to your questions, get help with your orders, and learn more about shopping on ShoppyGo.",
+
+    "search_placeholder": "Search for a question or topic...",
+    "search_button": "Search",
+    "popular_searches": "Popular searches",
+
+    "quick_help": "Quick Help",
+    "quick_help_desc": "Find the help you need quickly",
+
+    "orders": "Orders",
+    "orders_desc": "Manage your orders and check their status.",
+    "track_order": "Track Order",
+
+    "shipping": "Shipping & Delivery",
+    "shipping_desc": "Learn about delivery times, fees, and shipping options.",
+    "learn_more": "Learn More",
+
+    "returns": "Returns & Refunds",
+    "returns_desc": "Learn how to request a return and receive your refund.",
+    "request_return": "Request a Return",
+
+    "payment": "Payment",
+    "payment_desc": "Learn more about available payment methods.",
+    "payment_methods": "Payment Methods",
+
+    "account": "Account",
+    "account_desc": "Manage your account and personal information.",
+    "manage_account": "Manage Account",
+
+    "faq_title": "Frequently Asked Questions",
+    "faq_desc": "Quick answers to the most common questions from ShoppyGo customers.",
+
+    "faq1_q": "How can I place an order?",
+    "faq1_a": "Browse the products you want, add them to your cart, then proceed to checkout and enter your delivery information and payment method.",
+
+    "faq2_q": "How can I track my order?",
+    "faq2_a": "You can track your order from the My Orders section in your ShoppyGo account after your order has been shipped.",
+
+    "faq3_q": "How long does delivery take?",
+    "faq3_a": "Delivery usually takes between 2 and 5 business days depending on your delivery address.",
+
+    "faq4_q": "How much does shipping cost?",
+    "faq4_a": "The current standard shipping fee is 50 EGP per order. Free shipping may be available during promotional offers.",
+
+    "faq5_q": "Can I pay when I receive my order?",
+    "faq5_a": "Yes, Cash on Delivery is available when it is shown as an option for your order and delivery address.",
+
+    "faq6_q": "How can I request a return?",
+    "faq6_a": "You can submit a return request from your orders section. Return eligibility depends on the product and its return conditions.",
+
+    "faq7_q": "Can I replace a product?",
+    "faq7_a": "Replacement is available only for eligible products and according to the applicable return and replacement conditions.",
+
+    "faq8_q": "How will I receive my refund?",
+    "faq8_a": "Depending on the situation, your refund may be sent to a supported bank account or electronic wallet.",
+
+    "faq9_q": "What should I do if my order is delayed?",
+    "faq9_a": "Check your order status first. If your order has exceeded the expected delivery time, contact our support team for assistance.",
+
+    "categories_title": "Browse Help Topics",
+    "categories_desc": "Explore our help sections to find detailed information.",
+
+    "category_orders": "Orders & Tracking",
+    "category_orders_desc": "Everything about placing, managing, and tracking your orders.",
+
+    "category_shipping": "Shipping & Delivery",
+    "category_shipping_desc": "Delivery times, shipping fees, delivery areas, and more.",
+
+    "category_returns": "Returns & Refunds",
+    "category_returns_desc": "Return requests, replacements, and refund information.",
+
+    "category_payment": "Payment & Billing",
+    "category_payment_desc": "Available payment methods and payment-related questions.",
+
+    "category_account": "Account & Security",
+    "category_account_desc": "Account settings, registration, and keeping your account secure.",
+
+    "category_terms": "Terms & Policies",
+    "category_terms_desc": "Our terms of use, return policy, and other important policies.",
+
+    "contact_title": "Still Need Help?",
+    "contact_desc": "Our support team is ready to help you with any question or problem.",
+    "contact_support": "Contact Support",
+    "track_orders": "Track My Orders",
+
+    "support_available": "We're here to help",
+    "support_available_desc": "If you couldn't find what you're looking for, don't hesitate to contact us.",
+
+    "no_results": "No results found",
+    "no_results_desc": "Try searching with different words or browse the help topics below."
+  },
+  "return_policy": {
+    "badge": "Return & Exchange Policy",
+    "hero_title": "Shop with Confidence with Complete<br />Flexibility in Returns & Exchanges",
+    "hero_desc": "At ShoppyGo, your complete satisfaction is our goal. You can easily return or exchange your purchases under the following terms.",
+    "highlight_1_title": "14 Days Return",
+    "highlight_1_sub": "Guaranteed by consumer law",
+    "highlight_2_title": "Quality Guarantee",
+    "highlight_2_sub": "Thorough product inspection",
+    "highlight_3_title": "Doorstep Pickup",
+    "highlight_3_sub": "Our courier comes to you",
+
+    "conditions_label": "Terms & Specifications",
+    "conditions_title": "Conditions for Accepting Returns",
+    "conditions_desc": "To ensure your return request is processed smoothly and without delays, please verify:",
+    "cond1_title": "Original Packaging",
+    "cond1_desc": "Product must be in its original box and unopened packaging with all accessories.",
+    "cond2_title": "Tags Attached",
+    "cond2_desc": "All original price tags and labels must remain attached without removal.",
+    "cond3_title": "Invoice / Order Number",
+    "cond3_desc": "Possession of the order number or official electronic invoice from ShoppyGo.",
+    "cond4_title": "Unused Condition",
+    "cond4_desc": "Item must not have been used, tested, or worn in any way.",
+
+    "steps_label": "How to Return",
+    "steps_title": "4 Simple Steps to Return Your Order",
+    "steps_desc": "Clear and direct steps starting from your account to receiving your refund.",
+    "step1_title": "Submit Request",
+    "step1_desc": "Go to 'My Orders', select the item, and click on 'Request Return'.",
+    "step2_title": "Courier Pickup",
+    "step2_desc": "A courier will contact you to pick up the shipment within 2-4 business days.",
+    "step3_title": "Quality Inspection",
+    "step3_desc": "The product arrives at our warehouse to verify compliance with return conditions.",
+    "step4_title": "Get Refunded",
+    "step4_desc": "Funds are credited back to you immediately upon successful quality check.",
+
+    "non_returnable_title": "Non-Returnable Items",
+    "non_returnable_subtitle": "For hygiene and safety reasons, the following items cannot be returned:",
+    "non1": "Underwear and swimwear.",
+    "non2": "Opened personal care and beauty products.",
+    "non3": "Digital software and gift cards after delivery.",
+    "non4": "Customized or personalized items made on request.",
+
+    "refund_methods_title": "Refund Methods & Timelines",
+    "refund_methods_subtitle": "How and when do you get your money back?",
+    "ref_card_title": "Credit / Debit Cards",
+    "ref_card_desc": "Refunded to the same payment card within 5 to 14 business days depending on your bank.",
+    "ref_cod_title": "Cash on Delivery (COD)",
+    "ref_cod_desc": "Added as store credit in your ShoppyGo wallet instantly or transferred to your bank/e-wallet.",
+
+    "faq_label": "FAQ",
+    "faq_title": "Frequently Asked Questions",
+    "faq_desc": "Here are answers to the most common questions from our customers.",
+    "faq1_q": "Who pays for return shipping?",
+    "faq1_a": "If the return is due to a manufacturing defect or an error by ShoppyGo, we cover all shipping costs. If returning by personal preference, shipping fees will be deducted.",
+    "faq2_q": "How long does a refund take?",
+    "faq2_a": "It usually takes 3 to 7 business days from the moment the returned package arrives at our warehouse and passes inspection.",
+    "faq3_q": "Can I exchange an item for a different one?",
+    "faq3_a": "Yes, you can request an exchange for a different size or color, or substitute it for another item by paying or refunding the price difference.",
+    "faq4_q": "What if I receive a damaged item?",
+    "faq4_a": "Please contact support immediately or submit a return request within 48 hours of receipt along with photos of the damaged item.",
+
+    "cta_title": "Need help with a return request?",
+    "cta_desc": "Our customer support team is available anytime to assist you through the process.",
+    "btn_request_return": "Submit Return Request",
+    "btn_contact_us": "Contact Support"
+  },
+  "privacy_policy": {
+    "badge": "Privacy & Data Security Policy",
+    "hero_title": "Your Personal Data is Completely Safe<br />With ShoppyGo",
+    "hero_desc": "We are committed to protecting your privacy and ensuring the safety of your personal information while shopping on our platform with full transparency.",
+
+    "hl_1_title": "Full Data Encryption",
+    "hl_1_sub": "256-bit SSL encryption for all transactions",
+    "hl_2_title": "Complete Control",
+    "hl_2_sub": "Manage and edit your data anytime",
+    "hl_3_title": "No Third-Party Selling",
+    "hl_3_sub": "Your data is never sold to anyone",
+
+    "pillars_label": "Privacy Pillars",
+    "pillars_title": "How We Handle Your Data at ShoppyGo",
+    "pillars_desc": "We guarantee total transparency in how your personal information is collected and used.",
+
+    "p1_title": "Essential Data Collection",
+    "p1_desc": "We only collect data necessary to fulfill and deliver your orders, such as name, address, and phone number.",
+    "p2_title": "Enhancing Shopping Experience",
+    "p2_desc": "We use your preferences to display the most relevant deals and products tailored for you.",
+    "p3_title": "Limited & Secure Sharing",
+    "p3_desc": "Your basic info is shared strictly with delivery partners and payment gateways to process orders.",
+    "p4_title": "Cookies Usage",
+    "p4_desc": "We use cookies to save your shopping cart and make sign-ins fast and effortless.",
+
+    "collect_title": "Data We Collect",
+    "collect_subtitle": "Types of information required to complete your shopping experience",
+    "col_1_t": "Personal Information",
+    "col_1_d": "Full name, email address, phone number, and detailed shipping address.",
+    "col_2_t": "Payment & Transaction Details",
+    "col_2_d": "Payment details (processed fully encrypted through certified payment processors; we do not store card numbers).",
+    "col_3_t": "Browsing & Location Data",
+    "col_3_d": "IP address and device type to help secure your account and detect fraudulent activity.",
+
+    "rights_title": "Your Rights & Control",
+    "rights_subtitle": "What you can do with your registered data with us",
+    "right_1_t": "Edit & Update",
+    "right_1_d": "You can update your personal information and delivery addresses at any time from your account settings.",
+    "right_2_t": "Account & Data Erasure",
+    "right_2_d": "You have the right to request permanent deletion of your account and all associated data.",
+    "right_3_t": "Opt-out of Notifications",
+    "right_3_d": "You can unsubscribe from promotional emails and marketing alerts with a single click.",
+
+    "faq_label": "Privacy FAQ",
+    "faq_title": "Security & Privacy Queries",
+    "faq_desc": "Direct answers to common questions about your data security.",
+    "faq1_q": "Is my credit card information stored on ShoppyGo?",
+    "faq1_a": "No, we never store your bank card numbers. Payments are processed securely via encrypted, fully certified payment gateways.",
+    "faq2_q": "Will my phone number be shared with telemarketers?",
+    "faq2_a": "Absolutely not. Your phone number and email will never be shared with third-party advertisers.",
+    "faq3_q": "How can I delete all my data from the platform?",
+    "faq3_a": "You can request account deletion from your profile settings or contact our privacy support team, and your data will be erased within 48 hours.",
+    "faq4_q": "What is the purpose of cookies?",
+    "faq4_a": "Cookies help us remember items in your cart and ensure a smoother, faster browsing experience tailored to your preferences.",
+
+    "cta_title": "Have a specific privacy question?",
+    "cta_desc": "Our data protection team is ready to answer any questions regarding your information security.",
+    "btn_contact_privacy": "Contact Privacy Officer",
+    "btn_manage_account": "Manage Account Settings"
+  },
+  "terms_conditions": {
+    "badge": "Terms & Conditions of Use",
+    "hero_title": "Rules & Usage Policy for<br />ShoppyGo Platform",
+    "hero_desc": "Please read these Terms and Conditions carefully before using our platform. Your use of the website constitutes full acceptance of all terms listed below.",
+
+    "hl_1_title": "Legally Binding Agreement",
+    "hl_1_sub": "Governs all purchase transactions",
+    "hl_2_title": "Rights & Consumer Protection",
+    "hl_2_sub": "Ensuring user & merchant rights",
+    "hl_3_title": "Regular Updates",
+    "hl_3_sub": "Continuous review of terms",
+
+    "pillars_label": "Key Clauses",
+    "pillars_title": "Core Principles of Using ShoppyGo",
+    "pillars_desc": "A summary of the primary rules and policies governing your shopping experience on our platform.",
+
+    "p1_title": "Account Creation & Security",
+    "p1_desc": "You must be at least 18 years old to place orders independently and hold full responsibility for keeping your account credentials secure.",
+    "p2_title": "Orders & Purchases",
+    "p2_desc": "All placed orders are subject to acceptance and stock availability. We reserve the right to decline any order at our discretion.",
+    "p3_title": "Pricing & Taxes",
+    "p3_desc": "All prices are displayed in the local currency and are inclusive of applicable taxes unless stated otherwise in product details.",
+    "p4_title": "Intellectual Property",
+    "p4_desc": "All content, trademarks, logos, and graphics displayed on ShoppyGo are exclusive property of the website and protected by law.",
+
+    "details_1_title": "User Responsibilities",
+    "details_1_sub": "Rules to adhere to while using the platform",
+    "resp_1_t": "Accurate Information",
+    "resp_1_d": "Users commit to providing fully accurate details (such as shipping address and phone number) to ensure successful order delivery.",
+    "resp_2_t": "Lawful Usage",
+    "resp_2_d": "It is strictly prohibited to use the platform for unlawful purposes or attempt to breach/disrupt site operations.",
+    "resp_3_t": "Account Maintenance",
+    "resp_3_d": "Users are responsible for updating any changes to their personal information through their account dashboard.",
+
+    "details_2_title": "Limitation of Liability",
+    "details_2_sub": "Legal limits of ShoppyGo regarding service delivery",
+    "liab_1_t": "Product Availability",
+    "liab_1_d": "We strive to ensure accurate stock levels, but rare exceptions may require order cancellation or adjustment with full refunds.",
+    "liab_2_t": "Third-Party Shipping Delays",
+    "liab_2_d": "We are not liable for delays caused by force majeure events or third-party courier delays beyond our reasonable control.",
+    "liab_3_t": "Scheduled Maintenance",
+    "liab_3_d": "Service may be temporarily suspended for scheduled maintenance or system upgrades to improve user experience.",
+
+    "faq_label": "Terms FAQ",
+    "faq_title": "General Queries Regarding Agreement",
+    "faq_desc": "Direct answers to the most common questions about our terms of use.",
+    "faq1_q": "Can these Terms and Conditions be updated?",
+    "faq1_a": "Yes, ShoppyGo reserves the right to amend these terms at any time. Significant updates will be communicated via email or site notices.",
+    "faq2_q": "What happens if a product is mispriced?",
+    "faq2_a": "If a pricing error occurs on an item you ordered, our team will seek your confirmation at the correct price or cancel the order with a full refund.",
+    "faq3_q": "Can ShoppyGo terminate my account?",
+    "faq3_a": "We reserve the right to suspend or terminate accounts that violate our terms, engage in fraudulent activities, or place fake orders.",
+    "faq4_q": "What governing law applies in disputes?",
+    "faq4_a": "All terms and conditions and any resulting disputes shall be governed by the applicable local state laws and courts.",
+
+    "cta_title": "Have questions about our legal terms?",
+    "cta_desc": "Contact our legal support and customer care team for clarification and assistance.",
+    "btn_contact_legal": "Contact Legal Support",
+    "btn_view_privacy": "View Privacy Policy"
+  },
+  "branches": {
+    "badge": "ShoppyGo Stores",
+    "hero_title": "Visit Us at Our Nearest<br />Branches & Showrooms",
+    "hero_desc": "We are delighted to welcome you across our branch network in Cairo, Giza, and Alexandria for product pickups and hands-on experience.",
+
+    "stat_cities": "Major Cities",
+    "stat_branches": "Active Outlets",
+    "days": "Days",
+    "stat_support": "In-Store Support",
+
+    "filter_all": "All Branches",
+    "filter_cairo": "Cairo",
+    "filter_giza": "Giza",
+    "filter_alex": "Alexandria",
+
+    "city_cairo": "Cairo",
+    "city_giza": "Giza",
+    "city_alex": "Alexandria",
+    "tag_main": "Headquarters",
+
+    "label_address": "Full Address",
+    "label_hours": "Working Hours",
+    "label_phone": "Direct Phone",
+
+    "hours_standard": "Daily from 10:00 AM to 10:00 PM",
+
+    "b1_name": "Nasr City Branch (HQ)",
+    "b1_address": "25 Makram Ebeid St., Next to City Stars, Cairo",
+
+    "b2_name": "Fifth Settlement Branch",
+    "b2_address": "North 90th St., Downtown Mall, Administrative Building B3",
+
+    "b3_name": "Mohandessin Branch",
+    "b3_address": "جامعة الدول العربية St., Opposite Mostafa Mahmoud Mosque, Giza",
+
+    "b4_name": "Sheikh Zayed Branch",
+    "b4_address": "Mall of Arabia, Gate 3, Ground Floor",
+
+    "b5_name": "Mahattat El Raml Branch",
+    "b5_address": "Saad Zaghloul St., Intersection of Safia Zaghloul, Alexandria",
+
+    "b6_name": "Smouha Branch",
+    "b6_address": "14th of May Road, Opposite Zahran Mall, Smouha, Alexandria",
+
+    "btn_directions": "Directions",
+    "btn_call": "Call Branch",
+
+    "notice_title": "Looking for another branch or need help?",
+    "notice_desc": "Our support team is ready to assist you and direct you to the nearest store or showroom.",
+    "btn_contact_support": "Contact Us Now"
+  },
+  "not_found": {
+    "badge": "Error 404 - Page Not Found",
+    "title": "Oops! The page you're looking for doesn't exist",
+    "desc": "The page might have been removed, renamed, or is temporarily unavailable. You can return home or explore the sections below.",
+    "btn_home": "Back to Home",
+    "btn_back": "Go Back",
+    "quick_links_title": "Or navigate quickly to:",
+    "link_products": "All Products",
+    "link_branches": "Our Branches",
+    "link_offers": "Offers & Deals",
+    "link_support": "Customer Support"
+  },
+  "call_us": {
+    "badge": "Contact Us",
+    "hero_title": "We are Here to Help & Connect",
+    "hero_desc": "Have a question or feedback? Our support team is ready to assist you as quickly as possible.",
+
+    "form_title": "Send Us a Message",
+    "form_subtitle": "Fill in the details below and we will contact you via email or phone.",
+    "success_message": "Your message has been sent successfully! Our team will reach out soon.",
+
+    "label_name": "Full Name",
+    "placeholder_name": "Enter your full name",
+    "error_name": "Please enter a valid name (at least 3 characters)",
+
+    "label_phone": "Phone Number",
+    "placeholder_phone": "010XXXXXXXX",
+    "error_phone": "Please enter a valid phone number",
+
+    "label_email": "Email Address",
+    "placeholder_email": "example@domain.com",
+    "error_email": "Please enter a valid email address",
+
+    "label_subject": "Subject",
+    "select_subject": "Select a subject",
+    "subj_general": "General Inquiry",
+    "subj_order": "Order Status",
+    "subj_shipping": "Shipping & Delivery",
+    "subj_complaint": "Feedback or Complaint",
+    "error_subject": "Please select a subject",
+
+    "label_message": "Message Details",
+    "placeholder_message": "Write the details of your inquiry or message here...",
+    "error_message": "Please write your message details (at least 10 characters)",
+
+    "btn_send": "Send Message",
+    "btn_sending": "Sending...",
+
+    "info_phone_title": "Phone Support",
+    "info_phone_sub": "Available all week long",
+
+    "info_email_title": "Email Support",
+    "info_email_sub": "We usually respond within 24h",
+
+    "info_address_title": "Headquarters",
+    "info_address_val": "Nasr City, Cairo, Egypt",
+    "info_address_sub": "Makram Ebeid Street",
+
+    "info_hours_title": "Working Hours",
+    "info_hours_val": "8:00 AM - 12:00 AM",
+    "info_hours_sub": "Daily except Fridays"
+  },
+  "about_us": {
+    "badge": "About Our Platform",
+    "hero_title": "Building the Future of E-Commerce & ERP Solutions",
+    "hero_desc": "ShoppyGo is a hybrid platform connecting shopping, multi-warehouse operations, and inventory management for a seamless experience.",
+
+    "stats": {
+      "customers": "Happy Customers",
+      "products": "Products Available",
+      "warehouses": "Fulfillment Centers",
+      "orders": "Orders Delivered"
+    },
+
+    "mission_title": "Our Mission",
+    "mission_desc": "Empower consumers and business owners with a reliable digital environment backed by fast logistics and transparent services.",
+
+    "vision_title": "Our Vision",
+    "vision_desc": "To redefine modern retail by building a smart supply chain that directly links warehouses to end consumers effortlessly.",
+
+    "why_title": "Why Choose ShoppyGo?",
+    "why_subtitle": "Key advantages that make us your trusted shopping partner",
+
+    "feat1_title": "Fast & Reliable Shipping",
+    "feat1_desc": "Smart warehouse distribution guarantees quick local fulfillment.",
+
+    "feat2_title": "Smart Multi-Warehouse",
+    "feat2_desc": "Real-time stock tracking ensures products are always available.",
+
+    "feat3_title": "Secure Payments",
+    "feat3_desc": "Encrypted checkout workflows providing complete buyer protection.",
+
+    "feat4_title": "24/7 Dedicated Support",
+    "feat4_desc": "Our support agents are always ready to answer questions and assist.",
+
+    "cta_title": "Ready to Start a Better Shopping Experience?",
+    "cta_desc": "Explore our product catalog or contact our support team today.",
+    "btn_shop": "Shop Products",
+    "btn_contact": "Contact Us"
+  },
+  "faq": {
+    "badge": "Help Center",
+    "hero_title": "Frequently Asked Questions",
+    "hero_desc": "Find quick answers to common questions about orders, shipping, payment, and returns.",
+    "search_placeholder": "Search your question here (e.g. shipping, return policy...)",
+    "empty_title": "No matching questions found",
+    "empty_desc": "Try searching with different keywords or clear the applied filters.",
+    "btn_reset": "Reset Filters",
+
+    "cta_title": "Still need help?",
+    "cta_desc": "Our support team is here to answer any specific questions you have.",
+    "btn_contact": "Contact Support",
+
+    "categories": {
+      "all": "All",
+      "shipping": "Shipping & Delivery",
+      "payment": "Payments & Billing",
+      "returns": "Returns & Refunds",
+      "account": "Account & Security"
+    },
+
+    "items": {
+      "orders_delivery": {
+        "question": "How long does order delivery take in Egypt?",
+        "answer": "Delivery usually takes 24 to 48 hours within Cairo & Giza, and 2-4 business days for other governorates via Bosta shipping."
+      },
+      "track_order": {
+        "question": "How can I track my shipment status?",
+        "answer": "You can track your order status by visiting 'My Orders' in your account or by clicking the tracking link sent via SMS and Email."
+      },
+      "payment_methods": {
+        "question": "What payment options are available on ShoppyGo?",
+        "answer": "We accept Cash on Delivery (COD), Credit/Debit Cards (Visa & MasterCard), Mobile Wallets (Vodafone Cash, etc.), and Meeza via Paymob gateway."
+      },
+      "cash_on_delivery": {
+        "question": "Is Cash on Delivery (COD) supported?",
+        "answer": "Yes, Cash on Delivery is available for most locations across Egypt during checkout."
+      },
+      "return_policy": {
+        "question": "What is your return and exchange policy?",
+        "answer": "You can return or exchange items within 14 days of delivery provided the product is unused and in its original packaging."
+      },
+      "refund_time": {
+        "question": "How long does a refund take to process?",
+        "answer": "Card refunds take 5-10 business days depending on your bank. COD refunds are sent instantly to your Mobile Wallet upon item inspection."
+      },
+      "create_account": {
+        "question": "Do I need an account to place an order?",
+        "answer": "Creating an account helps you track your orders, save delivery addresses, and receive exclusive promotional offers."
+      },
+      "reset_password": {
+        "question": "What should I do if I forgot my password?",
+        "answer": "Click 'Forgot Password' on the login page and we will send a password reset link to your registered email address."
+      }
+    }
+  },
+  "wishlist": {
+    "badge": "Wishlist",
+    "title": "My Favorite Products",
+    "items_count": "Items",
+    "summary": "You have {{count}} saved items in your wishlist",
+    "btn_add_all_cart": "Add All To Cart",
+    "btn_clear_all": "Clear Wishlist",
+    "remove_tooltip": "Remove from wishlist",
+    "in_stock": "In Stock",
+    "out_of_stock": "Out of Stock",
+    "btn_add_cart": "Add to Cart",
+    "btn_out_of_stock": "Out of Stock",
+    "empty_title": "Your Wishlist is Empty",
+    "empty_desc": "You haven't saved any products to your wishlist yet. Explore our catalog and save what you love!",
+    "btn_explore_products": "Explore Products Now"
+  },
+  "cart": {
+    "badge": "Shopping Cart",
+    "title": "Your Cart Items",
+    "items_count": "Items",
+    "free_shipping_notice": "Add {{amount}} more to unlock FREE Shipping!",
+    "free_shipping_unlocked": "Congrats! You unlocked FREE Shipping",
+    "variant": "Variant",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "max_stock_reached": "Max limit reached",
+    "remove_tooltip": "Remove item from cart",
+    "btn_continue_shopping": "Continue Shopping",
+    "btn_clear_cart": "Clear Cart",
+    "coupon_title": "Discount Coupon",
+    "coupon_placeholder": "Enter promo code...",
+    "btn_apply": "Apply",
+    "coupon_applied_msg": "Coupon ({{code}}) applied successfully!",
+    "order_summary": "Order Summary",
+    "subtotal": "Subtotal",
+    "discount": "Coupon Discount",
+    "shipping": "Estimated Shipping",
+    "free": "FREE",
+    "estimated_tax": "VAT Tax (14%)",
+    "total": "Grand Total",
+    "btn_proceed_checkout": "Proceed to Checkout",
+    "secure_checkout": "100% Secure Checkout",
+    "easy_returns": "14-Day Easy Returns",
+    "empty_title": "Your Cart is Empty",
+    "empty_desc": "Looks like you haven't added anything to your cart yet. Explore our store and start shopping!",
+    "btn_explore_products": "Start Shopping Now"
+  },
+  "auth_user": {
+    "login": {
+      "title": "Welcome Back!",
+      "subtitle": "Log in to continue to your ShoppyGo account",
+      "btn_google": "Continue with Google",
+      "or_divider": "Or sign in with email",
+      "email_label": "Email Address",
+      "email_placeholder": "name@example.com",
+      "password_label": "Password",
+      "password_placeholder": "••••••••",
+      "forgot_password": "Forgot password?",
+      "show_password": "Show password",
+      "hide_password": "Hide password",
+      "remember_me": "Remember me on this device",
+      "btn_submit": "Sign In",
+      "btn_submitting": "Signing in...",
+      "no_account": "Don't have an account?",
+      "create_account": "Create an account",
+      "err_email_required": "Email is required",
+      "err_email_invalid": "Please enter a valid email address",
+      "err_password_required": "Password is required",
+      "err_password_min": "Password must be at least 6 characters"
+    },
+    "register": {
+      "title": "Create Your Account",
+      "subtitle": "Join ShoppyGo and enjoy a seamless shopping experience",
+      "btn_google": "Sign up with Google",
+      "or_divider": "Or sign up with email",
+      "firstName_label": "First Name",
+      "firstName_placeholder": "Abdelrahman",
+      "lastName_label": "Last Name",
+      "lastName_placeholder": "Eid",
+      "phone_label": "Phone Number",
+      "phone_placeholder": "01XXXXXXXXX",
+      "DOB_label": "DOB",
+      "DOB_placeholder": "2003/10/10",
+      "gender_label": "Gender",
+      "gender_male_label": "Male",
+      "gender_female_label": "Female",
+      "address_label": "Address",
+      "address_country_label": "Country",
+      "address_governorate_label": "Governorate / City",
+      "address_zone_label": "Zone",
+      "address_street_label": "Street",
+      "street_placeholder": "El Ashrin",
+      "address_postalCode_label": "Postal Code",
+      "address_postalCode_placeholder": "475236",
+      "email_label": "Email Address",
+      "email_placeholder": "name@example.com",
+      "password_label": "Password",
+      "password_placeholder": "••••••••",
+      "confirm_password_label": "Confirm Password",
+      "confirm_password_placeholder": "••••••••",
+      "show_password": "Show password",
+      "hide_password": "Hide password",
+      "accept_prefix": "I agree to the ",
+      "terms_link": "Terms & Conditions",
+      "and_word": " and ",
+      "privacy_link": "Privacy Policy",
+      "btn_submit": "Create Account",
+      "btn_submitting": "Creating account...",
+      "has_account": "Already have an account?",
+      "login_now": "Sign in",
+      "Select a country" : "Select a country",
+      "Select a city" : "Select a city",
+      "err_firstname_required": "First name is required",
+      "err_firstname_min": "First name must be at least 2 characters",
+      "err_lastname_required": "Last name is required",
+      "err_lastname_min": "Last name must be at least 2 characters",
+      "err_email_required": "Email is required",
+      "err_email_invalid": "Please enter a valid email address",
+      "err_password_required": "Password is required",
+      "err_password_min": "Password must be at least 6 characters",
+      "err_weak_password": "Password must be strong (at least 8 characters long, including uppercase and lowercase letters, numbers, and special characters e.g., Ex@mple123)",
+      "err_invalid_phone": "Invalid phone number. Please enter a valid phone number for Egypt, Saudi Arabia, or Qatar (e.g., 01012345678 or 0512345678)",
+      "err_confirm_password_required": "Password confirmation is required",
+      "err_password_mismatch": "Passwords do not match",
+      "err_phone_required": "Phone number is required",
+      "err_phone_invalid": "Invalid phone number",
+      "err_dob_required": "Date of birth is required",
+      "err_gender_required": "Please select a gender",
+      "err_country_required": "Please select a country",
+      "err_governorate_required": "Please select a governorate/city",
+      "err_terms_required": "You must accept the terms and conditions"
+    },
+    "confirm_otp": {
+      "title": "Confirm Verification Code",
+      "subtitle": "Enter the 6-digit code sent to",
+      "didnt_receive": "Didn't receive code?",
+      "resend_btn": "Resend code",
+      "resend_in": "You can request a new code in",
+      "btn_submit": "Verify Code",
+      "btn_submitting": "Verifying...",
+      "change_email": "Change email or phone number",
+      "err_invalid_otp": "Invalid verification code, please try again"
+    },
+    "forget_password": {
+      "title": "Forgot Password?",
+      "subtitle": "No worries! Enter your email address and we'll send you a verification code to reset your password",
+      "email_label": "Email Address",
+      "email_placeholder": "name@example.com",
+      "btn_submit": "Send Verification Code",
+      "btn_submitting": "Sending...",
+      "back_to_login": "Back to Sign In",
+      "err_email_required": "Email is required",
+      "err_email_invalid": "Please enter a valid email address",
+      "success_message": "Verification code sent successfully! Redirecting..."
+    }
+  },
+  "profile": {
+    "dashboard": "Dashboard",
+    "vip_member": "VIP Member",
+    "nav": {
+      "general": "Overview",
+      "orders": "My Orders",
+      "settings": "Settings",
+      "logout": "Sign Out"
+    },
+    "general": {
+      "welcome_back": "Welcome back",
+      "welcome_subtitle": "Here is an overview of your account activity and latest updates",
+      "edit_profile": "Edit Profile",
+      "currency": "EGP",
+      "view_all": "View All",
+      "stats": {
+        "totalOrders": "Total Orders",
+        "pendingOrders": "Active Orders",
+        "Return_requests": "Return requests"
+      },
+      "recent_orders": {
+        "title": "Recent Orders",
+        "empty": "No recent orders found"
+      },
+      "notifications": {
+        "title": "Recent Notifications",
+        "empty": "No new notifications",
+        "btn_all": "View All Notifications"
+      }
+    },
+    "notifications": {
+      "title": "Notification Center",
+      "unread_count_label": "Unread",
+      "actions": {
+        "mark_all_read": "Mark all as read",
+        "clear_all": "Clear all",
+        "mark_read": "Mark as read",
+        "delete": "Delete notification",
+        "view_details": "View details"
+      },
+      "filters": {
+        "all": "All",
+        "unread": "Unread",
+        "orders": "Orders",
+        "system": "Security & System"
+      },
+      "empty": {
+        "title": "No notifications yet",
+        "description": "We will notify you here about updates and account activity."
+      },
+      "items": {
+        "order_shipped_title": "Your order has been shipped!",
+        "order_shipped_msg": "Order #ORD-98234 is currently on its way to your address.",
+        "promo_title": "Exclusive VIP Discount 🔥",
+        "promo_msg": "Enjoy a 20% discount on all products using promo code SHOP20",
+        "security_title": "New Login Detected",
+        "security_msg": "Your account was accessed from a new browser session in Cairo."
+      }
+    },
+    "orders": {
+      "title": "My Orders",
+      "subtitle": "Track your order status and view your order history",
+      "currency": "EGP",
+      "items_count": "items",
+      "total": "Total",
+      "view_details": "View Details",
+      "filters": {
+        "all": "All",
+        "processing": "Processing",
+        "shipped": "Shipped",
+        "delivered": "Delivered",
+        "cancelled": "Cancelled"
+      },
+      "status": {
+        "placed": "Placed",
+        "processing": "Processing",
+        "shipped": "Shipped",
+        "delivered": "Delivered",
+        "cancelled": "Cancelled"
+      },
+      "payment": {
+        "card": "Credit Card",
+        "cod": "Cash on Delivery",
+        "vodafone_cash": "Vodafone Cash"
+      },
+      "empty": {
+        "title": "No orders found",
+        "desc": "You haven't placed any orders yet."
+      }
+    },
+    "order_details": {
+      "title": "Order Details",
+      "placed_on": "Placed on",
+      "tracking_status": "Order Tracking Status",
+      "shipping_address": "Shipping Address",
+      "payment_info": "Payment Method",
+      "payment_status": "Payment Status",
+      "paid": "Paid",
+      "items_summary": "Order Items",
+      "subtotal": "Subtotal",
+      "shipping_fee": "Shipping Fee",
+      "discount": "Discount",
+      "grand_total": "Grand Total",
+      "steps": {
+        "placed": "Placed",
+        "processing": "Processing",
+        "shipped": "Shipped",
+        "delivered": "Delivered"
+      },
+      "actions": {
+        "download_invoice": "Download Invoice (PDF)",
+        "cancel_order": "Cancel Order",
+        "done": "Done"
+      }
+    },
+    "profile_settings": {
+      "title": "Account Settings",
+      "subtitle": "Manage your personal information, security, and notification preferences",
+      "tabs": {
+        "general": "Personal Details",
+        "security": "Security & Password",
+        "notifications": "Preferences & Notifications"
+      },
+      "general": {
+        "title": "Personal Information",
+        "desc": "Update your personal details and profile picture.",
+        "change_photo": "Change Photo",
+        "photo_requirements": "Profile Picture",
+        "full_name": "Full Name",
+        "job_title": "Job Title",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "bio": "Bio / About You"
+      },
+      "security": {
+        "title": "Security & Password",
+        "desc": "Change your password to ensure your account stays secure.",
+        "current_password": "Current Password",
+        "new_password": "New Password",
+        "confirm_password": "Confirm New Password",
+        "update_btn": "Update Password",
+        "delete_account": "Delete Account Permanently",
+        "delete_account_desc": "Deleting your account will permanently wipe all your data.",
+        "delete_btn": "Delete Account"
+      },
+      "preferences": {
+        "title": "Preferences & Notifications",
+        "desc": "Control your notification settings and preferred application language.",
+        "language": "Application Language",
+        "language_desc": "Select your preferred display language.",
+        "email_orders": "Order Email Notifications",
+        "email_orders_desc": "Receive order tracking and invoice emails.",
+        "email_promos": "Promotions & Offers",
+        "email_promos_desc": "Receive news about discounts and seasonal offers.",
+        "sms_notif": "SMS Notifications",
+        "sms_notif_desc": "Receive text messages for delivery status updates."
+      },
+      "actions": {
+        "save_changes": "Save Changes"
+      },
+      "errors": {
+        "required": "This field is required",
+        "email_invalid": "Please enter a valid email address",
+        "password_min": "Password must be at least 8 characters long"
+      }
+    }
+  }
+}

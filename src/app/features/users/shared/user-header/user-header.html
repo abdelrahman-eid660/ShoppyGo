@@ -1,0 +1,249 @@
+<header>
+  <!-- ==================== DESKTOP & TABLET HEADER==================== -->
+  <nav class="d-none d-md-block">
+    <div class="container text-center">
+      <div class="top-header">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="shorts gap-2">
+              <button class="btn btn-outline-info my-1" (click)="themeService.toggleTheme()">
+                {{themeService.currentTheme() === 'dark' ? '🌙' : '☀️'}}
+              </button>
+              <button class="btn btn-outline-info my-1" (click)="translocoService.toggleButton()">
+                {{translocoService.currentLanguage() === 'ar' ? 'عربي' : 'EN'}}
+              </button>
+              <a routerLink="/user/faq">{{"FAQ" | transloco}}</a>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex align-items-center justify-content-end gap-3">
+            <div class="social-media d-flex align-items-center justify-content-end gap-2 mt-2">
+              <div class="facebook">
+                <i class="fa-brands fa-facebook-f"><a routerLink=""></a></i>
+                <h6>{{"facebook" | transloco}}</h6>
+              </div>
+              <div class="instagram">
+                <i class="fa-brands fa-instagram"><a routerLink=""></a></i>
+                <h6>{{"instagram" | transloco}}</h6>
+              </div>
+              <div class="x-twitter">
+                <i class="fa-brands fa-x-twitter"><a routerLink=""></a></i>
+                <h6>{{"x-twitter" | transloco}}</h6>
+              </div>
+            </div>
+            <div class="register d-flex justify-content-center align-items-center gap-1">
+              @if(logged() === true){
+                <i class="fa-regular fa-user" style="color: #f8c530;"></i>
+                <button class="btn"><a routerLink="/user/user-account">{{ "My Account" | transloco}}</a></button>
+              }@else {
+                <i class="fa-regular fa-user" style="color: #f8c530;"></i>
+                <button class="btn"><a routerLink="/user/auth/login">{{ "login or register" | transloco}}</a></button>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="center-header">
+      <div class="container center-container">
+        <div class="main-header">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <div class="right-side d-flex justify-content-start align-items-center gap-1">
+                <img class="img-fluid" src="/assets/imgs/shoppyGo-logo.png" routerLink="/user/home" alt="logo">
+                <div class="flex justify-center prime-input">
+                  <p-autocomplete [(ngModel)]="selectedCommand" [suggestions]="filteredCommands" (completeMethod)="search($event)" optionLabel="label" placeholder="{{'searching in products' | transloco}}" scrollHeight="14rem" />
+                  <p-select [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="{{'select category' | transloco}}" class="w-full md:w-56"></p-select>
+                  <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="left-side d-flex align-items-center">
+                <div class="support">
+                  <h6>{{"support" | transloco}}</h6>
+                  <p>0201009402834<span class="h5">+</span></p>
+                </div>
+                <div class="user-fav">
+                  <div class="wishlist">
+                    <a routerLink="/user/wishlist"><i class="fa-solid fa-heart"></i></a>
+                    <span class="wishlist-quantity">0</span>
+                  </div>
+                  <div class="cart">
+                    <a routerLink="/user/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <span class="cart-quantity">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="bottom-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-9">
+            <ul class="nav" id="tabs">
+              <li class="category-tab">
+                <a routerLink="/user/categories" routerLinkActive="active">{{'select category' | transloco}}</a>
+                <ul class="category-list">
+                  <li>
+                    <img src="/assets/imgs/header/1.png" alt="">
+                    <a href="#" class="category-title">{{"Electronics" | transloco}}</a>
+                    <div class="sub-list">
+                      <div data-aos="fade-down" class="item d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <a href="#" class="item-title">a</a>
+                      </div>
+                      <div data-aos="fade-down" class="item d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <a href="#" class="item-title">a</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="/assets/imgs/header/2.png" alt="">
+                    <a href="#" class="category-title">{{"Home Appliances" | transloco}}</a>
+                    <div class="sub-list">
+                      <div data-aos="fade-down" class="item d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <a href="#" class="item-title">a</a>
+                      </div>
+                      <div data-aos="fade-down" class="item d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <a href="#" class="item-title">a</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="/assets/imgs/header/3.png" alt="">
+                    <a href="#" class="category-title">{{"Entertainment" | transloco}}</a>
+                    <div class="sub-list">
+                      <div data-aos="fade-down" class="item d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <a href="#" class="item-title">a</a>
+                      </div>
+                      <div data-aos="fade-down" class="item d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <a href="#" class="item-title">a</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="/assets/imgs/header/4.png" alt="">
+                    <a href="#" class="category-title">{{"Sports" | transloco}}</a>
+                    <div class="sub-list">
+                      <div data-aos="fade-down" class="item d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <a href="#" class="item-title">a</a>
+                      </div>
+                      <div data-aos="fade-down" class="item d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <a href="#" class="item-title">a</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="/assets/imgs/header/5.png" alt="">
+                    <a href="#" class="category-title">{{"Super Market" | transloco}}</a>
+                    <div class="sub-list">
+                      <div data-aos="fade-down" class="item d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <a href="#" class="item-title">a</a>
+                      </div>
+                      <div data-aos="fade-down" class="item d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-arrow-left-long"></i>
+                        <a href="#" class="item-title">a</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li><a routerLink="/user/store" routerLinkActive="active">{{'the store' | transloco}}</a></li>
+              <li><a routerLink="/user/brands" routerLinkActive="active">{{'brands' | transloco}}</a></li>
+              <li><a routerLink="/user/about" routerLinkActive="active">{{'about' | transloco}}</a></li>
+              <li><a routerLink="/user/contact" routerLinkActive="active">{{'contact' | transloco}}</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <div class="follow-order d-flex align-items-center justify-content-center">
+              <i class="fa-solid fa-dolly"></i>
+              <a routerLink="/user/user-account/my-orders">{{"order tracking" | transloco}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== MOBILE HEADER ==================== -->
+  <nav class="mobile-header d-block d-md-none">
+    <div class="mobile-header-bar d-flex align-items-center justify-content-between px-2 py-2">
+
+      <div class="d-flex align-items-center gap-2">
+        <button class="mobile-toggler-btn" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <img class="mobile-logo" src="/assets/imgs/shoppyGo-logo.png" routerLink="/user/home" alt="logo">
+
+        <div class="mobile-controls d-flex gap-1">
+          <button class="btn btn-sm btn-outline-info" (click)="themeService.toggleTheme()">
+            {{themeService.currentTheme() === 'dark' ? '🌙' : '☀️'}}
+          </button>
+          <button class="btn btn-sm btn-outline-info" (click)="translocoService.toggleButton()">
+            {{translocoService.currentLanguage() === 'ar' ? 'عربي' : 'EN'}}
+          </button>
+        </div>
+      </div>
+
+      <div class="search-trigger-btn" (click)="toggleSearch()">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+
+    <div class="mobile-search-overlay" [class.show]="isSearchOpen()">
+      <div class="mobile-search-inner d-flex align-items-center justify-content-between w-100 gap-2">
+        <div class="flex-grow-1">
+          <p-autocomplete [(ngModel)]="selectedCommand" [suggestions]="filteredCommands" (completeMethod)="search($event)" optionLabel="label" placeholder="{{'searching in products' | transloco}}" scrollHeight="14rem" />
+        </div>
+        <button class="close-search-btn" (click)="toggleSearch()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="collapse mobile-menu-content p-3" id="mobileMenu">
+      <div class="d-flex align-items-center justify-content-between pb-3 border-bottom mb-3">
+        <div class="register d-flex align-items-center gap-1">
+          <a routerLink="/user/user-account"><i class="fa-regular fa-user" style="color: #f8c530;"></i></a>
+          <button class="btn p-0 text-white">{{ "login or register" | transloco}}</button>
+        </div>
+        <div class="user-fav d-flex align-items-center gap-3">
+          <div class="wishlist">
+            <a routerLink="/user/wishlist"><i class="fa-solid fa-heart"></i></a>
+            <span class="wishlist-quantity">0</span>
+          </div>
+          <div class="cart">
+            <a routerLink="/user/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <span class="cart-quantity">0</span>
+          </div>
+        </div>
+      </div>
+
+      <ul class="mobile-nav-list list-unstyled d-flex flex-column gap-2 m-0 p-0">
+        <li>
+          <a routerLink="/user/categories" routerLinkActive="active" class="mobile-nav-link"> {{'select category' | transloco}}</a>
+        </li>
+        <li><a routerLink="/user/store" routerLinkActive="active" class="mobile-nav-link">{{'the store' | transloco}}</a></li>
+        <li><a routerLink="/user/brands" routerLinkActive="active" class="mobile-nav-link">{{'brands' | transloco}}</a></li>
+        <li><a routerLink="/user/about" routerLinkActive="active" class="mobile-nav-link">{{'about' | transloco}}</a></li>
+        <li><a routerLink="/user/contact" routerLinkActive="active" class="mobile-nav-link">{{'contact' | transloco}}</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

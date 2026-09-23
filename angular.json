@@ -25,15 +25,14 @@
               }
             ],
             "styles": [
+              "./public/assets/css/main.css",
+              "./public/assets/vendors/aos/aos.css",
+              "./public/assets/vendors/bootStrap/bootstrap.min.css",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
               "src/styles.css"
             ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
             "security": {
               "allowedHosts": []
-            },
-            "ssr": {
-              "entry": "src/server.ts"
             }
           },
           "configurations": {

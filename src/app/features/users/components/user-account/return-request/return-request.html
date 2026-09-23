@@ -1,0 +1,523 @@
+<div class="return-page">
+  <!-- Hero -->
+  <section class="return-hero">
+    <div class="hero-content">
+      <span class="hero-badge">
+        <i class="fa-solid fa-rotate-left"></i>
+        {{ 'return_request.badge' | transloco }}
+      </span>
+
+      <h1 [innerHTML]="'return_request.hero_title' | transloco"></h1>
+
+      <p>
+        {{ 'return_request.hero_desc' | transloco }}
+      </p>
+
+      <div class="hero-features">
+        <div class="hero-feature">
+          <div class="feature-icon">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+
+          <div>
+            <strong>
+              {{ 'return_request.return_days' | transloco }}
+            </strong>
+
+            <span>
+              {{ 'return_request.return_period' | transloco }}
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-feature">
+          <div class="feature-icon">
+            <i class="fa-solid fa-truck"></i>
+          </div>
+
+          <div>
+            <strong>
+              {{ 'return_request.free_return' | transloco }}
+            </strong>
+
+            <span>
+              {{ 'return_request.return_shipping' | transloco }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="return-circle"></div>
+
+      <div class="return-box">
+        <i class="fa-solid fa-box"></i>
+
+        <div class="return-arrow">
+          <i class="fa-solid fa-rotate-left"></i>
+        </div>
+      </div>
+
+      <div class="floating-return-card card-one">
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <span>
+          {{ 'return_request.safe_return' | transloco }}
+        </span>
+      </div>
+
+      <div class="floating-return-card card-two">
+        <i class="fa-solid fa-check"></i>
+
+        <span>
+          {{ 'return_request.easy_process' | transloco }}
+        </span>
+      </div>
+    </div>
+  </section>
+  <!-- Return Conditions -->
+  <section class="return-conditions">
+    <div class="section-heading">
+      <span>
+        {{ 'return_request.conditions_label' | transloco }}
+      </span>
+
+      <h2>
+        {{ 'return_request.conditions_title' | transloco }}
+      </h2>
+
+      <p>
+        {{ 'return_request.conditions_desc' | transloco }}
+      </p>
+    </div>
+
+    <div class="conditions-grid">
+      <article class="condition-card">
+        <div class="condition-icon">
+          <i class="fa-solid fa-calendar-check"></i>
+        </div>
+
+        <div>
+          <h3>
+            {{ 'return_request.condition_1_title' | transloco }}
+          </h3>
+
+          <p>
+            {{ 'return_request.condition_1_desc' | transloco }}
+          </p>
+        </div>
+      </article>
+
+      <article class="condition-card">
+        <div class="condition-icon">
+          <i class="fa-solid fa-box-open"></i>
+        </div>
+
+        <div>
+          <h3>
+            {{ 'return_request.condition_2_title' | transloco }}
+          </h3>
+
+          <p>
+            {{ 'return_request.condition_2_desc' | transloco }}
+          </p>
+        </div>
+      </article>
+
+      <article class="condition-card">
+        <div class="condition-icon">
+          <i class="fa-solid fa-list-check"></i>
+        </div>
+
+        <div>
+          <h3>
+            {{ 'return_request.condition_3_title' | transloco }}
+          </h3>
+
+          <p>
+            {{ 'return_request.condition_3_desc' | transloco }}
+          </p>
+        </div>
+      </article>
+
+      <article class="condition-card">
+        <div class="condition-icon">
+          <i class="fa-solid fa-ban"></i>
+        </div>
+
+        <div>
+          <h3>
+            {{ 'return_request.condition_4_title' | transloco }}
+          </h3>
+
+          <p>
+            {{ 'return_request.condition_4_desc' | transloco }}
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- How It Works -->
+  <section class="return-process">
+    <div class="section-heading">
+      <span>
+        {{ 'return_request.how_it_works' | transloco }}
+      </span>
+
+      <h2>
+        {{ 'return_request.return_in_steps' | transloco }}
+      </h2>
+
+      <p>
+        {{ 'return_request.process_desc' | transloco }}
+      </p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">01</div>
+
+        <div class="step-icon">
+          <i class="fa-solid fa-receipt"></i>
+        </div>
+
+        <h3>
+          {{ 'return_request.step1_title' | transloco }}
+        </h3>
+
+        <p>
+          {{ 'return_request.step1_desc' | transloco }}
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+
+        <div class="step-icon">
+          <i class="fa-solid fa-clipboard-list"></i>
+        </div>
+
+        <h3>
+          {{ 'return_request.step2_title' | transloco }}
+        </h3>
+
+        <p>
+          {{ 'return_request.step2_desc' | transloco }}
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+
+        <div class="step-icon">
+          <i class="fa-solid fa-truck-ramp-box"></i>
+        </div>
+
+        <h3>
+          {{ 'return_request.step3_title' | transloco }}
+        </h3>
+
+        <p>
+          {{ 'return_request.step3_desc' | transloco }}
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+
+        <div class="step-icon">
+          <i class="fa-solid fa-money-bill-transfer"></i>
+        </div>
+
+        <h3>
+          {{ 'return_request.step4_title' | transloco }}
+        </h3>
+
+        <p>
+          {{ 'return_request.step4_desc' | transloco }}
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Refund -->
+  <section class="refund-section">
+    <div class="refund-wrapper">
+      <div class="refund-content">
+        <span class="section-label">
+          {{ 'return_request.refund_label' | transloco }}
+        </span>
+
+        <h2>
+          {{ 'return_request.refund_title' | transloco }}
+        </h2>
+
+        <p>
+          {{ 'return_request.refund_desc' | transloco }}
+        </p>
+
+        <div class="refund-methods">
+          <div class="refund-method">
+            <div class="refund-icon">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+
+            <div>
+              <h4>
+                {{ 'return_request.bank_transfer' | transloco }}
+              </h4>
+
+              <p>
+                {{ 'return_request.bank_transfer_desc' | transloco }}
+              </p>
+            </div>
+          </div>
+
+          <div class="refund-method">
+            <div class="refund-icon">
+              <i class="fa-solid fa-wallet"></i>
+            </div>
+
+            <div>
+              <h4>
+                {{ 'return_request.wallet' | transloco }}
+              </h4>
+
+              <p>
+                {{ 'return_request.wallet_desc' | transloco }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="refund-visual">
+        <div class="refund-card">
+          <div class="refund-card-icon">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+          </div>
+
+          <strong>
+            {{ 'return_request.refund_amount' | transloco }}
+          </strong>
+
+          <span>
+            {{ 'return_request.refund_after_approval' | transloco }}
+          </span>
+
+          <div class="refund-status">
+            <i class="fa-solid fa-circle-check"></i>
+
+            {{ 'return_request.refund_status' | transloco }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Return Tracking -->
+  <section class="return-tracking">
+    <div class="tracking-inner">
+      <div class="tracking-icon">
+        <i class="fa-solid fa-route"></i>
+      </div>
+
+      <div class="tracking-text">
+        <span>
+          {{ 'return_request.tracking_label' | transloco }}
+        </span>
+
+        <h2>
+          {{ 'return_request.tracking_title' | transloco }}
+        </h2>
+
+        <p>
+          {{ 'return_request.tracking_desc' | transloco }}
+        </p>
+      </div>
+
+      <a routerLink="/user/user-account/my-orders" class="tracking-button">
+        {{ 'return_request.track_button' | transloco }}
+
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+    </div>
+
+    <div class="return-status-preview">
+      <div class="status-line"></div>
+
+      <div class="status-item active">
+        <div class="status-dot">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
+        <span>
+          {{ 'return_request.status_submitted' | transloco }}
+        </span>
+      </div>
+
+      <div class="status-item active">
+        <div class="status-dot">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
+        <span>
+          {{ 'return_request.status_review' | transloco }}
+        </span>
+      </div>
+
+      <div class="status-item">
+        <div class="status-dot">
+          <i class="fa-solid fa-truck"></i>
+        </div>
+
+        <span>
+          {{ 'return_request.status_pickup' | transloco }}
+        </span>
+      </div>
+
+      <div class="status-item">
+        <div class="status-dot">
+          <i class="fa-solid fa-box-open"></i>
+        </div>
+
+        <span>
+          {{ 'return_request.status_received' | transloco }}
+        </span>
+      </div>
+
+      <div class="status-item">
+        <div class="status-dot">
+          <i class="fa-solid fa-money-bill-wave"></i>
+        </div>
+
+        <span>
+          {{ 'return_request.status_refunded' | transloco }}
+        </span>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-heading">
+      <span>
+        {{ 'return_request.faq_subtitle' | transloco }}
+      </span>
+
+      <h2>
+        {{ 'return_request.have_question' | transloco }}
+      </h2>
+
+      <p>
+        {{ 'return_request.faq_desc' | transloco }}
+      </p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>
+          <span>
+            {{ 'return_request.faq1_q' | transloco }}
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+
+        <p>
+          {{ 'return_request.faq1_a' | transloco }}
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>
+            {{ 'return_request.faq2_q' | transloco }}
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+
+        <p>
+          {{ 'return_request.faq2_a' | transloco }}
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>
+            {{ 'return_request.faq3_q' | transloco }}
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+
+        <p>
+          {{ 'return_request.faq3_a' | transloco }}
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>
+            {{ 'return_request.faq4_q' | transloco }}
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+
+        <p>
+          {{ 'return_request.faq4_a' | transloco }}
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>
+            {{ 'return_request.faq5_q' | transloco }}
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+
+        <p>
+          {{ 'return_request.faq5_a' | transloco }}
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>
+            {{ 'return_request.faq6_q' | transloco }}
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+
+        <p>
+          {{ 'return_request.faq6_a' | transloco }}
+        </p>
+      </details>
+    </div>
+  </section>
+  <!-- CTA -->
+  <section class="return-cta">
+    <div class="cta-content">
+      <div class="cta-icon">
+        <i class="fa-solid fa-headset"></i>
+      </div>
+
+      <h2>
+        {{ 'return_request.need_help' | transloco }}
+      </h2>
+
+      <p>
+        {{ 'return_request.need_help_desc' | transloco }}
+      </p>
+
+      <a routerLink="/user/contact" class="cta-button">
+        {{ 'return_request.contact_us' | transloco }}
+
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+    </div>
+  </section>
+</div>

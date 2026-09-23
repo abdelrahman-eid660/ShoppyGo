@@ -1,0 +1,146 @@
+<div class="general-overview">
+  <!-- Welcome Banner -->
+  <div class="welcome-banner">
+    <div class="user-greeting">
+      <h1>{{ 'profile.general.welcome_back' | transloco }}, {{ userName() }}! 👋</h1>
+      <p>{{ 'profile.general.welcome_subtitle' | transloco }}</p>
+    </div>
+    <a routerLink="/user/user-account/profile-settings" class="btn-edit-profile">
+      <i class="fa-solid fa-user-pen"></i>
+      <span>{{ 'profile.general.edit_profile' | transloco }}</span>
+    </a>
+  </div>
+
+  <!-- Quick Stats Grid -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="icon-wrapper blue">
+        <i class="fa-solid fa-box"></i>
+      </div>
+      <div class="stat-info">
+        <span class="stat-value">{{ stats().totalOrders }}</span>
+        <span class="stat-label">{{ 'profile.general.stats.totalOrders' | transloco }}</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon-wrapper orange">
+        <i class="fa-solid fa-truck-fast"></i>
+      </div>
+      <div class="stat-info">
+        <span class="stat-value">{{ stats().pendingOrders }}</span>
+        <span class="stat-label">{{ 'profile.general.stats.pendingOrders' | transloco }}</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="icon-wrapper red">
+        <i class="fa-solid fa-reply"></i>
+      </div>
+      <div class="stat-info">
+        <span class="stat-value">{{ stats().Return_requests }}</span>
+        <span class="stat-label">{{ 'profile.general.stats.Return_requests' | transloco }}</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Dashboard Main Grid Content -->
+  <div class="dashboard-grid">
+
+    <!-- Left Column: Recent Orders Preview -->
+    <div class="main-column">
+      <div class="section-card">
+        <div class="card-header">
+          <h2>
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            {{ 'profile.general.recent_orders.title' | transloco }}
+          </h2>
+          <a routerLink="/user/user-account/my-orders" class="link-view-all">
+            {{ 'profile.general.view_all' | transloco }}
+            <i class="fa-solid fa-arrow-left flip-icon"></i>
+          </a>
+        </div>
+
+        <div class="card-body">
+          @if (recentOrders().length > 0) {
+            <div class="orders-list">
+              @for (order of recentOrders(); track order.id) {
+                <div class="order-item">
+                  <div class="order-meta">
+                    <span class="order-number">#{{ order.orderNumber }}</span>
+                    <span class="order-date">{{ order.date }}</span>
+                  </div>
+                  <div class="order-price">
+                    {{ order.total }} {{ 'profile.general.currency' | transloco }}
+                  </div>
+                  <div class="order-status" [class]="order.statusClass">
+                    {{ order.statusText }}
+                  </div>
+                </div>
+              }
+            </div>
+          } @else {
+            <div class="empty-state">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <p>{{ 'profile.general.recent_orders.empty' | transloco }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Recent Notifications Widget -->
+    <div class="side-column">
+      <div class="section-card notifications-widget">
+        <div class="card-header">
+          <div class="header-title">
+            <i class="fa-solid fa-bell"></i>
+            <h2>{{ 'profile.general.notifications.title' | transloco }}</h2>
+            @if (unreadNotificationsCount() > 0) {
+              <span class="badge-unread">{{ unreadNotificationsCount() }}</span>
+            }
+          </div>
+          <a routerLink="/user/user-account/user-notifications" class="link-view-all">
+            {{ 'profile.general.view_all' | transloco }}
+            <i class="fa-solid fa-arrow-left flip-icon"></i>
+          </a>
+        </div>
+
+        <div class="card-body p-0">
+          @if (recentNotifications().length > 0) {
+            <div class="notifications-list">
+              @for (notification of recentNotifications(); track notification.id) {
+                <div class="notification-item" [class.unread]="!notification.isRead">
+                  <div class="notification-icon" [class]="notification.type">
+                    <i [class]="notification.icon"></i>
+                  </div>
+                  <div class="notification-content">
+                    <p class="notification-text">{{ notification.message }}</p>
+                    <span class="notification-time">{{ notification.time }}</span>
+                  </div>
+                  @if (!notification.isRead) {
+                    <span class="dot-unread"></span>
+                  }
+                </div>
+              }
+            </div>
+          } @else {
+            <div class="empty-state">
+              <i class="fa-regular fa-bell-slash"></i>
+              <p>{{ 'profile.general.notifications.empty' | transloco }}</p>
+            </div>
+          }
+        </div>
+
+        <div class="card-footer">
+          <a routerLink="/user/user-account/user-notifications" class="btn-all-notifications">
+            <span>{{ 'profile.general.notifications.btn_all' | transloco }}</span>
+            <i class="fa-solid fa-arrow-left flip-icon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

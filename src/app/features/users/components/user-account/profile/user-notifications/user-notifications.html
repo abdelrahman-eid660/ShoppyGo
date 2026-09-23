@@ -1,0 +1,145 @@
+<div class="notifications-container">
+  <!-- Header الصفحة -->
+  <div class="notifications-header">
+    <div class="header-title-group">
+      <h1 class="page-title">{{ 'profile.notifications.title' | transloco }}</h1>
+      @if (unreadCount() > 0) {
+        <span class="unread-badge">
+          {{ unreadCount() }} {{ 'profile.notifications.unread_count_label' | transloco }}
+        </span>
+      }
+    </div>
+
+    <!-- أزرار التحكم السريعة -->
+    <div class="header-actions">
+      @if (unreadCount() > 0) {
+        <button type="button" class="btn-action primary" (click)="markAllAsRead()">
+          <i class="fa-solid fa-check-double"></i>
+          <span>{{ 'profile.notifications.actions.mark_all_read' | transloco }}</span>
+        </button>
+      }
+      @if (notifications().length > 0) {
+        <button type="button" class="btn-action danger" (click)="clearAll()">
+          <i class="fa-solid fa-trash-can"></i>
+          <span>{{ 'profile.notifications.actions.clear_all' | transloco }}</span>
+        </button>
+      }
+    </div>
+  </div>
+
+  <!-- تصفية الإشعارات (Filter Tabs) -->
+  <div class="filter-tabs">
+    <button
+      type="button"
+      class="tab-item"
+      [class.active]="selectedFilter() === 'all'"
+      (click)="setFilter('all')">
+      <span>{{ 'profile.notifications.filters.all' | transloco }}</span>
+      <span class="tab-count">{{ notifications().length }}</span>
+    </button>
+
+    <button
+      type="button"
+      class="tab-item"
+      [class.active]="selectedFilter() === 'unread'"
+      (click)="setFilter('unread')">
+      <span>{{ 'profile.notifications.filters.unread' | transloco }}</span>
+      <span class="tab-count badge-unread">{{ unreadCount() }}</span>
+    </button>
+
+    <button
+      type="button"
+      class="tab-item"
+      [class.active]="selectedFilter() === 'order'"
+      (click)="setFilter('order')">
+      <i class="fa-solid fa-box-archive"></i>
+      <span>{{ 'profile.notifications.filters.orders' | transloco }}</span>
+    </button>
+
+    <button
+      type="button"
+      class="tab-item"
+      [class.active]="selectedFilter() === 'system'"
+      (click)="setFilter('system')">
+      <i class="fa-solid fa-shield-halved"></i>
+      <span>{{ 'profile.notifications.filters.system' | transloco }}</span>
+    </button>
+  </div>
+
+  <!-- قائمة الإشعارات -->
+  <div class="notifications-list">
+    @for (item of filteredNotifications(); track item.id) {
+      <div
+        class="notification-card"
+        [class.is-unread]="!item.isRead"
+        [class.type-order]="item.type === 'order'"
+        [class.type-promo]="item.type === 'promo'"
+        [class.type-system]="item.type === 'system'"
+        [class.type-alert]="item.type === 'alert'">
+
+        <!-- أيقونة نوع الإشعار -->
+        <div class="notification-icon">
+          @switch (item.type) {
+            @case ('order') { <i class="fa-solid fa-truck-fast"></i> }
+            @case ('promo') { <i class="fa-solid fa-ticket-simple"></i> }
+            @case ('system') { <i class="fa-solid fa-shield-halved"></i> }
+            @case ('alert') { <i class="fa-solid fa-triangle-exclamation"></i> }
+          }
+        </div>
+
+        <!-- محتوى الإشعار -->
+        <div class="notification-content" (click)="markAsRead(item.id)">
+          <div class="content-header">
+            <h3 class="notification-title">{{ item.title | transloco }}</h3>
+            <span class="notification-time">
+              <i class="fa-regular fa-clock"></i>
+              {{ item.createdAt }}
+            </span>
+          </div>
+          <p class="notification-message">{{ item.message | transloco }}</p>
+
+          @if (item.actionUrl) {
+            <a [routerLink]="item.actionUrl" class="notification-link">
+              <span>{{ 'profile.notifications.actions.view_details' | transloco }}</span>
+              <i class="fa-solid fa-arrow-left flip-icon"></i>
+            </a>
+          }
+        </div>
+
+        <!-- أزرار تفاعلية لكل إشعار -->
+        <div class="item-actions">
+          @if (!item.isRead) {
+            <button
+              type="button"
+              class="btn-icon"
+              [attr.title]="'profile.notifications.actions.mark_read' | transloco"
+              (click)="markAsRead(item.id)">
+              <i class="fa-solid fa-check"></i>
+            </button>
+          }
+          <button
+            type="button"
+            class="btn-icon delete-btn"
+            [attr.title]="'profile.notifications.actions.delete' | transloco"
+            (click)="deleteNotification(item.id)">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- مؤشر عدم القراءة -->
+        @if (!item.isRead) {
+          <span class="unread-dot"></span>
+        }
+      </div>
+    } @empty {
+      <!-- حالة عدم وجود إشعارات -->
+      <div class="empty-state">
+        <div class="empty-icon">
+          <i class="fa-regular fa-bell-slash"></i>
+        </div>
+        <h3 class="empty-title">{{ 'profile.notifications.empty.title' | transloco }}</h3>
+        <p class="empty-description">{{ 'profile.notifications.empty.description' | transloco }}</p>
+      </div>
+    }
+  </div>
+</div>

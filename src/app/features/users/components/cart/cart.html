@@ -1,0 +1,230 @@
+<div class="cart-page">
+  <!-- Hero / Header Section -->
+  <section class="cart-hero">
+    <div class="hero-header">
+      <div class="title-wrap">
+        <span class="hero-badge">
+          {{ 'cart.badge' | transloco }}
+          <i class="fa-solid fa-cart-shopping"></i>
+        </span>
+        <h1>{{ 'cart.title' | transloco }}</h1>
+      </div>
+      <div class="count-badge">
+        <span>{{ totalItemsCount() }}</span>
+        <small>{{ 'cart.items_count' | transloco }}</small>
+      </div>
+    </div>
+  </section>
+
+  @if (cartItems().length > 0) {
+    <!-- Free Shipping Progress Bar -->
+    <div class="free-shipping-card">
+      <div class="shipping-info">
+        @if (remainingForFreeShipping() > 0) {
+          <span>
+            {{ 'cart.free_shipping_notice' | transloco: { amount: (remainingForFreeShipping() | currency:'EGP ':'code':'1.0-2') } }}
+          </span>
+        } @else {
+          <span class="unlocked">
+            {{ 'cart.free_shipping_unlocked' | transloco }}
+            <i class="fa-solid fa-truck-fast"></i>
+            <i class="fa-solid fa-circle-check"></i>
+          </span>
+        }
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" [style.width.%]="freeShippingProgress()"></div>
+      </div>
+    </div>
+
+    <!-- Main Layout: Cart Items + Summary Sidebar -->
+    <div class="cart-container">
+      <!-- Left Column: Cart Items List -->
+      <div class="cart-main">
+        <div class="items-list">
+          @for (item of cartItems(); track item.id) {
+            <div class="cart-item-card">
+              <!-- Product Thumbnail -->
+              <div class="item-image" [routerLink]="['/user/store', item.id]">
+                <img [src]="item.image" [alt]="item.title" loading="lazy" />
+              </div>
+
+              <!-- Product Info -->
+              <div class="item-details">
+                <span class="item-category">{{ item.category }}</span>
+                <h3 class="item-title" [routerLink]="['/user/store', item.id]">{{ item.title }}</h3>
+
+                @if (item.selectedVariant) {
+                  <p class="item-variant">
+                    <span>{{ 'cart.variant' | transloco }}:</span> {{ item.selectedVariant }}
+                  </p>
+                }
+
+                <div class="item-price-mobile">
+                  <span class="unit-price">{{ item.price | currency:'EGP ':'code':'1.0-2' }}</span>
+                </div>
+              </div>
+
+              <!-- Quantity Controls -->
+              <div class="quantity-wrapper">
+                <div class="quantity-controls">
+                  <button
+                    class="btn-qty"
+                    [disabled]="item.quantity <= 1"
+                    (click)="updateQuantity(item.id, -1)"
+                    [title]="'cart.decrease' | transloco">
+                    <i class="fa-solid fa-minus"></i>
+                  </button>
+                  <span class="qty-value">{{ item.quantity }}</span>
+                  <button
+                    class="btn-qty"
+                    [disabled]="item.quantity >= item.stockQuantity"
+                    (click)="updateQuantity(item.id, 1)"
+                    [title]="'cart.increase' | transloco">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+                <small class="stock-limit" *ngIf="item.quantity >= item.stockQuantity">
+                  {{ 'cart.max_stock_reached' | transloco }}
+                </small>
+              </div>
+
+              <!-- Subtotal & Remove Action -->
+              <div class="item-total-action">
+                <span class="subtotal-price">
+                  {{ (item.price * item.quantity) | currency:'EGP ':'code':'1.0-2' }}
+                </span>
+                <button
+                  class="btn-remove-item"
+                  (click)="removeItem(item.id)"
+                  [title]="'cart.remove_tooltip' | transloco">
+                  <i class="fa-regular fa-trash-can"></i>
+                </button>
+              </div>
+            </div>
+          }
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="cart-footer-actions">
+          <a routerLink="/user/store" class="btn-continue-shopping">
+            <i class="fa-solid fa-arrow-right"></i>
+            <span>{{ 'cart.btn_continue_shopping' | transloco }}</span>
+          </a>
+          <button class="btn-clear-cart" (click)="clearCart()">
+            <i class="fa-solid fa-broom"></i>
+            <span>{{ 'cart.btn_clear_cart' | transloco }}</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Order Summary Sidebar -->
+      <aside class="cart-sidebar">
+        <!-- Coupon Code Box -->
+        <div class="sidebar-card coupon-box">
+          <h3>
+            <i class="fa-solid fa-ticket"></i>
+            {{ 'cart.coupon_title' | transloco }}
+          </h3>
+          <div class="coupon-form">
+            <input
+              type="text"
+              [placeholder]="'cart.coupon_placeholder' | transloco"
+              [value]="couponCode()"
+              (input)="onCouponInput($event)"
+              [disabled]="isCouponApplied()" />
+
+            @if (!isCouponApplied()) {
+              <button class="btn-apply-coupon" (click)="applyCoupon()" [disabled]="!couponCode().trim()">
+                {{ 'cart.btn_apply' | transloco }}
+              </button>
+            } @else {
+              <button class="btn-remove-coupon" (click)="removeCoupon()">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            }
+          </div>
+          @if (isCouponApplied()) {
+            <p class="coupon-success">
+              <i class="fa-solid fa-circle-check"></i>
+              {{ 'cart.coupon_applied_msg' | transloco: { code: appliedCouponCode() } }}
+            </p>
+          }
+        </div>
+
+        <!-- Order Summary Details -->
+        <div class="sidebar-card summary-box">
+          <h3>{{ 'cart.order_summary' | transloco }}</h3>
+
+          <div class="summary-rows">
+            <div class="summary-row">
+              <span>{{ 'cart.subtotal' | transloco }}</span>
+              <span class="row-value">{{ subtotal() | currency:'EGP ':'code':'1.0-2' }}</span>
+            </div>
+
+            @if (discountAmount() > 0) {
+              <div class="summary-row discount-row">
+                <span>{{ 'cart.discount' | transloco }}</span>
+                <span class="row-value">- {{ discountAmount() | currency:'EGP ':'code':'1.0-2' }}</span>
+              </div>
+            }
+
+            <div class="summary-row">
+              <span>{{ 'cart.shipping' | transloco }}</span>
+              <span class="row-value">
+                @if (shippingCost() === 0) {
+                  <span class="free-text">{{ 'cart.free' | transloco }}</span>
+                } @else {
+                  {{ shippingCost() | currency:'EGP ':'code':'1.0-2' }}
+                }
+              </span>
+            </div>
+
+            <div class="summary-row">
+              <span>{{ 'cart.estimated_tax' | transloco }}</span>
+              <span class="row-value">{{ estimatedTax() | currency:'EGP ':'code':'1.0-2' }}</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="summary-row total-row">
+              <span>{{ 'cart.total' | transloco }}</span>
+              <span class="total-value">{{ grandTotal() | currency:'EGP ':'code':'1.0-2' }}</span>
+            </div>
+          </div>
+
+          <!-- Checkout Button -->
+          <button class="btn-checkout" (click)="proceedToCheckout()">
+            <span>{{ 'cart.btn_proceed_checkout' | transloco }}</span>
+            <i class="fa-solid fa-shield-halved"></i>
+          </button>
+
+          <!-- Trust Badges -->
+          <div class="trust-badges">
+            <div class="badge-item">
+              <i class="fa-solid fa-lock"></i>
+              <span>{{ 'cart.secure_checkout' | transloco }}</span>
+            </div>
+            <div class="badge-item">
+              <i class="fa-solid fa-rotate-left"></i>
+              <span>{{ 'cart.easy_returns' | transloco }}</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  } @else {
+    <!-- Empty State -->
+    <div class="empty-state">
+      <div class="empty-icon">
+        <i class="fa-solid fa-cart-arrow-down"></i>
+      </div>
+      <h2>{{ 'cart.empty_title' | transloco }}</h2>
+      <p>{{ 'cart.empty_desc' | transloco }}</p>
+      <a routerLink="/user/store" class="btn-shop-now">
+        <i class="fa-solid fa-store"></i>
+        <span>{{ 'cart.btn_explore_products' | transloco }}</span>
+      </a>
+    </div>
+  }
+</div>

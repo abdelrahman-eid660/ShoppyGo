@@ -1,0 +1,116 @@
+<div class="wishlist-page">
+  <!-- Hero / Header Section -->
+  <section class="wishlist-hero">
+    <div class="hero-header">
+      <div class="title-wrap">
+        <span class="hero-badge">
+          {{ 'wishlist.badge' | transloco }}
+          <i class="fa-solid fa-heart"></i>
+        </span>
+        <h1>{{ 'wishlist.title' | transloco }}</h1>
+      </div>
+      <div class="count-badge">
+        <span>{{ wishlistItems().length }}</span>
+        <small>{{ 'wishlist.items_count' | transloco }}</small>
+      </div>
+    </div>
+  </section>
+
+  @if (wishlistItems().length > 0) {
+    <!-- Action Bar (Bulk Actions) -->
+    <div class="action-bar">
+      <p class="summary-text">
+        {{ 'wishlist.summary' | transloco: { count: wishlistItems().length } }}
+      </p>
+      <div class="bulk-buttons">
+        <button class="btn-bulk-cart" (click)="addAllToCart()">
+          <i class="fa-solid fa-cart-plus"></i>
+          <span>{{ 'wishlist.btn_add_all_cart' | transloco }}</span>
+        </button>
+        <button class="btn-clear-all" (click)="clearAll()">
+          <i class="fa-regular fa-trash-can"></i>
+          <span>{{ 'wishlist.btn_clear_all' | transloco }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Wishlist Cards Grid -->
+    <div class="products-grid">
+      @for (item of wishlistItems(); track item.id) {
+        <div class="product-card">
+          <!-- Action Badge & Remove Button -->
+          <div class="card-top-actions">
+            @if (item.discountPercent) {
+              <span class="discount-badge">-{{ item.discountPercent }}%</span>
+            } @else {
+              <span></span>
+            }
+            <button
+              class="btn-remove"
+              (click)="removeItem(item.id)"
+              [title]="'wishlist.remove_tooltip' | transloco"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <!-- Product Image -->
+          <div class="image-wrapper" [routerLink]="['/user/store', item.id]">
+            <img [src]="item.image" [alt]="item.title" loading="lazy" />
+            <div class="stock-badge" [class.out-of-stock]="!item.inStock">
+              <i [class]="item.inStock ? 'fa-solid fa-check' : 'fa-solid fa-xmark'"></i>
+              <span>{{
+                (item.inStock ? 'wishlist.in_stock' : 'wishlist.out_of_stock') | transloco
+              }}</span>
+            </div>
+          </div>
+
+          <!-- Product Details -->
+          <div class="card-content">
+            <span class="category-name">{{ item.category }}</span>
+            <h3 class="product-title" [routerLink]="['/user/store', item.id]">{{ item.title }}</h3>
+
+            <!-- Rating & Price -->
+            <div class="rating-box">
+              <i class="fa-solid fa-star"></i>
+              <span>{{ item.rating }}</span>
+              <small>({{ item.reviewsCount }})</small>
+            </div>
+
+            <div class="price-box">
+              <span class="current-price">{{
+                item.price | currency: 'EGP ' : 'code' : '1.0-2'
+              }}</span>
+              @if (item.originalPrice) {
+                <span class="original-price">{{
+                  item.originalPrice | currency: 'EGP ' : 'code' : '1.0-2'
+                }}</span>
+              }
+            </div>
+
+            <!-- Add to Cart Button -->
+            <button class="btn-add-cart" [disabled]="!item.inStock" (click)="addToCart(item)">
+              <i class="fa-solid fa-bag-shopping"></i>
+              <span>{{
+                (item.inStock ? 'wishlist.btn_add_cart' : 'wishlist.btn_out_of_stock') | transloco
+              }}</span>
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <!-- Empty State -->
+    <div class="empty-state">
+      <div class="empty-icon">
+        <i class="fa-regular fa-heart"></i>
+      </div>
+      <h2>{{ 'wishlist.empty_title' | transloco }}</h2>
+      <p>{{ 'wishlist.empty_desc' | transloco }}</p>
+      <a routerLink="/user/store" class="btn-shop-now">
+        <i class="fa-solid fa-store"></i>
+        <span>{{ 'wishlist.btn_explore_products' | transloco }}</span>
+      </a>
+    </div>
+  }
+</div>

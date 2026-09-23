@@ -1,0 +1,277 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <!-- Header Section -->
+    <div class="auth-header">
+      <div class="logo-badge">
+        <i class="fa-solid fa-user-plus"></i>
+      </div>
+      <h1>{{ 'auth_user.register.title' | transloco }}</h1>
+      <p>{{ 'auth_user.register.subtitle' | transloco }}</p>
+    </div>
+
+    <!-- Google Sign-Up Button -->
+    <button class="btn-google" type="button" (click)="signUpWithGoogle()">
+      <svg class="google-icon" viewBox="0 0 48 48">
+        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+      </svg>
+      <span>{{ 'auth_user.register.btn_google' | transloco }}</span>
+      <asl-google-signin-button class="overlay-google-btn" type="standard" size="large"></asl-google-signin-button>
+    </button>
+
+    <!-- Divider -->
+    <div class="auth-divider">
+      <span>{{ 'auth_user.register.or_divider' | transloco }}</span>
+    </div>
+
+    <!-- Register Form -->
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="auth-form">
+      <!-- First Name Field -->
+      <div class="form-group">
+        <label for="firstName">{{ 'auth_user.register.firstName_label' | transloco }}</label>
+        <div class="input-wrapper" [class.is-invalid]="isFieldInvalid('firstName')">
+          <i class="fa-regular fa-user input-icon"></i>
+          <input
+            id="firstName"
+            type="text"
+            formControlName="firstName"
+            [placeholder]="'auth_user.register.firstName_placeholder' | transloco"
+            autocomplete="given-name" />
+        </div>
+        @if (isFieldInvalid('firstName')) {
+          <span class="field-error">
+            @if (hasError('firstName', 'required') || hasError('firstName', 'dtoError')) {
+              {{ 'auth_user.register.err_firstname_required' | transloco }}
+            } @else if (hasError('firstName', 'minlength')) {
+              {{ 'auth_user.register.err_firstname_min' | transloco }}
+            }
+          </span>
+        }
+      </div>
+
+      <!-- Last Name Field -->
+      <div class="form-group">
+        <label for="lastName">{{ 'auth_user.register.lastName_label' | transloco }}</label>
+        <div class="input-wrapper" [class.is-invalid]="isFieldInvalid('lastName')">
+          <i class="fa-regular fa-user input-icon"></i>
+          <input
+            id="lastName"
+            type="text"
+            formControlName="lastName"
+            [placeholder]="'auth_user.register.lastName_placeholder' | transloco"
+            autocomplete="family-name" />
+        </div>
+        @if (isFieldInvalid('lastName')) {
+          <span class="field-error">
+            @if (hasError('lastName', 'required') || hasError('lastName', 'dtoError')) {
+              {{ 'auth_user.register.err_lastname_required' | transloco }}
+            } @else if (hasError('lastName', 'minlength')) {
+              {{ 'auth_user.register.err_lastname_min' | transloco }}
+            }
+          </span>
+        }
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">{{ 'auth_user.register.email_label' | transloco }}</label>
+        <div class="input-wrapper" [class.is-invalid]="isFieldInvalid('email')">
+          <i class="fa-regular fa-envelope input-icon"></i>
+          <input id="email" type="email" formControlName="email" [placeholder]="'auth_user.register.email_placeholder' | transloco" autocomplete="email" />
+        </div>
+        @if (isFieldInvalid('email')) {
+          <span class="field-error">
+            @if (hasError('email', 'required')) {
+              {{ 'auth_user.register.err_email_required' | transloco }}
+            } @else if (hasError('email', 'email') || hasError('email', 'dtoError')) {
+              {{ 'auth_user.register.err_email_invalid' | transloco }}
+            }
+          </span>
+        }
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">{{ 'auth_user.register.password_label' | transloco }}</label>
+        <div class="input-wrapper" [class.is-invalid]="isFieldInvalid('password')">
+          <i class="fa-solid fa-key input-icon"></i>
+          <input id="password" [type]="showPassword() ? 'text' : 'password'" formControlName="password" [placeholder]="'auth_user.register.password_placeholder' | transloco" autocomplete="new-password" />
+          <button type="button" class="btn-toggle-password" (click)="togglePasswordVisibility()" [title]="(showPassword() ? 'auth_user.register.hide_password' : 'auth_user.register.show_password') | transloco">
+            <i [class]="showPassword() ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye'"></i>
+          </button>
+        </div>
+        @if (isFieldInvalid('password')) {
+          <span class="field-error">
+            @if (hasError('password', 'required')) {
+              {{ 'auth_user.register.err_password_required' | transloco }}
+            } @else if (hasError('password', 'pattern') || hasError('password', 'dtoError')) {
+              {{ 'auth_user.register.err_weak_password' | transloco }}
+            }
+          </span>
+        }
+      </div>
+
+      <!-- Confirm Password Field -->
+      <div class="form-group">
+        <label for="confirmPassword">{{ 'auth_user.register.confirm_password_label' | transloco }}</label>
+        <div class="input-wrapper" [class.is-invalid]="isFieldInvalid('confirmPassword')">
+          <i class="fa-solid fa-shield-halved input-icon"></i>
+          <input id="confirmPassword" [type]="showConfirmPassword() ? 'text' : 'password'" formControlName="confirmPassword" [placeholder]="'auth_user.register.confirm_password_placeholder' | transloco" autocomplete="new-password" />
+          <button type="button" class="btn-toggle-password" (click)="toggleConfirmPasswordVisibility()" [title]="(showConfirmPassword() ? 'auth_user.register.hide_password' : 'auth_user.register.show_password') | transloco">
+            <i [class]="showConfirmPassword() ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye'"></i>
+          </button>
+        </div>
+        @if (isFieldInvalid('confirmPassword')) {
+          <span class="field-error">
+            @if (hasError('confirmPassword', 'required')) {
+              {{ 'auth_user.register.err_confirm_password_required' | transloco }}
+            } @else if (hasError('confirmPassword', 'mismatch') || hasError('confirmPassword', 'dtoError')) {
+              {{ 'auth_user.register.err_password_mismatch' | transloco }}
+            }
+          </span>
+        }
+      </div>
+
+      <!-- Phone Field -->
+      <div class="form-group">
+        <label for="phone">{{ 'auth_user.register.phone_label' | transloco }}</label>
+        <div class="input-wrapper" [class.is-invalid]="isFieldInvalid('phone')">
+          <i class="fa-solid fa-phone-flip input-icon"></i>
+          <input id="phone" type="text" formControlName="phone" [placeholder]="'auth_user.register.phone_placeholder' | transloco" autocomplete="tel" />
+        </div>
+        @if (isFieldInvalid('phone')) {
+          <span class="field-error">
+            @if (hasError('phone', 'required')) {
+              {{ 'auth_user.register.err_phone_required' | transloco }}
+            } @else if (hasError('phone', 'dtoError')) {
+              {{ 'auth_user.register.err_phone_invalid' | transloco }}
+            }
+          </span>
+        }
+      </div>
+
+      <!-- DOB Field -->
+      <div class="form-group">
+        <label for="DOB">{{ 'auth_user.register.DOB_label' | transloco }}</label>
+        <div class="input-wrapper" [class.is-invalid]="isFieldInvalid('DOB')">
+          <i class="fa-regular fa-calendar input-icon"></i>
+          <input id="DOB" type="date" formControlName="DOB" />
+        </div>
+        @if (isFieldInvalid('DOB')) {
+          <span class="field-error">
+            {{ 'auth_user.register.err_dob_required' | transloco }}
+          </span>
+        }
+      </div>
+
+      <!-- Gender Field -->
+      <div class="form-group">
+        <label>{{ 'auth_user.register.gender_label' | transloco }}</label>
+        <div class="input-wrapper-radio" [class.is-invalid]="isFieldInvalid('gender')">
+          <div class="d-flex align-items-center justify-content-start gap-5">
+            <div class="flex items-center gap-2 mt-1">
+              <p-radiobutton inputId="gender-male" value="male" formControlName="gender" />
+              <label class="me-2" for="gender-male">{{ 'auth_user.register.gender_male_label' | transloco }}</label>
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <p-radiobutton inputId="gender-female" value="female" formControlName="gender" />
+              <label class="me-2" for="gender-female">{{ 'auth_user.register.gender_female_label' | transloco }}</label>
+            </div>
+          </div>
+        </div>
+        @if (isFieldInvalid('gender')) {
+          <span class="field-error">
+            {{ 'auth_user.register.err_gender_required' | transloco }}
+          </span>
+        }
+      </div>
+
+      <!-- Address Group -->
+      <div class="form-group" formGroupName="address">
+        <label class="font-semibold mb-2 block">{{ 'auth_user.register.address_label' | transloco }}</label>
+
+        <!-- Country -->
+        <div class="form-subgroup mb-3">
+          <label  for="country">{{ 'auth_user.register.address_country_label' | transloco }}</label>
+          <p-select [options]="countries()" (onChange)="selectedCountry.set($event.value)" optionLabel="label" optionValue="value" placeholder="{{ 'auth_user.register.Select a country' | transloco}}" formControlName="country" class="w-full me-2" [class.is-invalid]="isFieldInvalid('address.country')" />
+          @if (isFieldInvalid('address.country')) {
+            <span class="field-error">{{ 'auth_user.register.err_country_required' | transloco }}</span>
+          }
+        </div>
+
+        <!-- Governorate -->
+        <div class="form-subgroup mb-3">
+          <label for="governorate">{{ 'auth_user.register.address_governorate_label' | transloco }}</label>
+          <p-select [disabled]="filteredCities().length === 0" [options]="filteredCities()" placeholder="{{ 'auth_user.register.Select a city' | transloco}}" formControlName="governorate" class="w-full me-2" [class.is-invalid]="isFieldInvalid('address.governorate')" />
+          @if (isFieldInvalid('address.governorate')) {
+            <span class="field-error">{{ 'auth_user.register.err_governorate_required' | transloco }}</span>
+          }
+        </div>
+
+        <!-- Zone -->
+        <div class="form-subgroup mb-3">
+          <label for="zone">{{ 'auth_user.register.address_zone_label' | transloco }}</label>
+          <div class="input-wrapper" [class.is-invalid]="isFieldInvalid('address.zone')">
+            <input class="me-2" id="address_zone" type="text" formControlName="zone" [placeholder]="'auth_user.register.address_zone_placeholder' | transloco" [class.is-invalid]="isFieldInvalid('address.zone')" />
+          </div>
+        </div>
+
+        <!-- Street -->
+        <div class="form-subgroup mb-3">
+          <label for="street">{{ 'auth_user.register.address_street_label' | transloco }}</label>
+          <div class="input-wrapper" [class.is-invalid]="isFieldInvalid('address.street')">
+            <input class="me-2" id="address_street" type="text" formControlName="street" [placeholder]="'auth_user.register.address_street_placeholder' | transloco" [class.is-invalid]="isFieldInvalid('address.street')" />
+          </div>
+        </div>
+
+        <!-- Postal Code -->
+        <div class="form-subgroup mb-3">
+          <label for="postalCode">{{ 'auth_user.register.address_postalCode_label' | transloco }}</label>
+          <div class="input-wrapper" [class.is-invalid]="isFieldInvalid('address.postalCode')">
+            <input class="me-2" id="address_postalCode" type="text" formControlName="postalCode" [placeholder]="'auth_user.register.address_postalCode_placeholder' | transloco " [class.is-invalid]="isFieldInvalid('address.postalCode')" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Terms & Conditions Checkbox -->
+      <div class="form-options">
+        <label class="checkbox-container">
+          <input type="checkbox" formControlName="acceptTerms" />
+          <span class="checkmark"></span>
+          <span class="checkbox-label">
+            {{ 'auth_user.register.accept_prefix' | transloco }}
+            <a routerLink="/user/terms-of-use" target="_blank" class="terms-link">{{ 'auth_user.register.terms_link' | transloco }}</a>
+            {{ 'auth_user.register.and_word' | transloco }}
+            <a routerLink="/user/privacy-policy" target="_blank" class="terms-link">{{ 'auth_user.register.privacy_link' | transloco }}</a>
+          </span>
+        </label>
+      </div>
+      @if (isFieldInvalid('acceptTerms')) {
+        <span class="field-error">{{ 'auth_user.register.err_terms_required' | transloco }}</span>
+      }
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn-submit" [disabled]="isLoading()">
+        @if (isLoading()) {
+          <i class="fa-solid fa-spinner fa-spin"></i>
+          <span>{{ 'auth_user.register.btn_submitting' | transloco }}</span>
+        } @else {
+          <span>{{ 'auth_user.register.btn_submit' | transloco }}</span>
+          <i class="fa-solid fa-user-check"></i>
+        }
+      </button>
+    </form>
+
+    <!-- Footer Link -->
+    <div class="auth-footer">
+      <p>
+        {{ 'auth_user.register.has_account' | transloco }}
+        <a routerLink="/user/auth/login" class="login-link">
+          {{ 'auth_user.register.login_now' | transloco }}
+        </a>
+      </p>
+    </div>
+  </div>
+</div>

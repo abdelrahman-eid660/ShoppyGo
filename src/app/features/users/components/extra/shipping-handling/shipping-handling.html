@@ -1,0 +1,364 @@
+<div class="shipping-page">
+  <!-- Hero Section -->
+  <section class="shipping-hero">
+    <div class="hero-content">
+      <span class="hero-badge">
+        <i class="fa-solid fa-truck-fast"></i>
+        {{ 'shipping.badge' | transloco }}
+      </span>
+
+      <h1 [innerHTML]="'shipping.hero_title' | transloco"></h1>
+
+      <p>{{ 'shipping.hero_desc' | transloco }}</p>
+
+      <div class="hero-info">
+        <div class="hero-info-item">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <strong>{{ 'shipping.delivery_days' | transloco }}</strong>
+            <span>{{ 'shipping.delivery_duration' | transloco }}</span>
+          </div>
+        </div>
+
+        <div class="hero-info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>{{ 'shipping.all_egypt' | transloco }}</strong>
+            <span>{{ 'shipping.covering_all' | transloco }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-illustration">
+      <div class="delivery-circle"></div>
+
+      <div class="delivery-box">
+        <i class="fa-solid fa-box-open"></i>
+      </div>
+
+      <div class="delivery-truck">
+        <i class="fa-solid fa-truck"></i>
+      </div>
+
+      <div class="floating-card card-one">
+        <i class="fa-solid fa-check"></i>
+        <span>{{ 'shipping.order_on_the_way' | transloco }}</span>
+      </div>
+
+      <div class="floating-card card-two">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>{{ 'shipping.safe_delivery' | transloco }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shipping Methods -->
+  <section class="shipping-section">
+    <div class="section-heading">
+      <span>{{ 'shipping.shipping_methods' | transloco }}</span>
+      <h2>{{ 'shipping.choose_suitable_method' | transloco }}</h2>
+      <p>{{ 'shipping.methods_desc' | transloco }}</p>
+    </div>
+
+    <div class="shipping-methods">
+      <!-- Standard Shipping -->
+      <article class="shipping-card featured">
+        <div class="card-icon">
+          <i class="fa-solid fa-truck"></i>
+        </div>
+
+        <div class="card-content">
+          <div class="card-title">
+            <h3>{{ 'shipping.standard_shipping' | transloco }}</h3>
+            <span class="popular">{{ 'shipping.most_popular' | transloco }}</span>
+          </div>
+
+          <p>{{ 'shipping.standard_desc' | transloco }}</p>
+
+          <div class="card-details">
+            <div>
+              <i class="fa-regular fa-clock"></i>
+              <span>{{ 'shipping.working_days' | transloco }}</span>
+            </div>
+
+            <div>
+              <i class="fa-solid fa-money-bill"></i>
+              <span>{{ 'shipping.shipping_fee_amount' | transloco }}</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Free Shipping -->
+      <article class="shipping-card">
+        <div class="card-icon free">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+
+        <div class="card-content">
+          <div class="card-title">
+            <h3>{{ 'shipping.free_shipping' | transloco }}</h3>
+            <span class="offer">{{ 'shipping.special_offers' | transloco }}</span>
+          </div>
+
+          <p>{{ 'shipping.free_desc' | transloco }}</p>
+
+          <div class="card-details">
+            <div>
+              <i class="fa-solid fa-tag"></i>
+              <span>{{ 'shipping.according_to_offer' | transloco }}</span>
+            </div>
+
+            <div>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>{{ 'shipping.no_shipping_fees' | transloco }}</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Delivery Steps -->
+  <section class="delivery-process">
+    <div class="section-heading">
+      <span>{{ 'shipping.how_delivery_works' | transloco }}</span>
+      <h2>{{ 'shipping.order_in_4_steps' | transloco }}</h2>
+      <p>{{ 'shipping.process_desc' | transloco }}</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">01</div>
+        <div class="step-icon">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <h3>{{ 'shipping.step1_title' | transloco }}</h3>
+        <p>{{ 'shipping.step1_desc' | transloco }}</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <div class="step-icon">
+          <i class="fa-solid fa-box"></i>
+        </div>
+        <h3>{{ 'shipping.step2_title' | transloco }}</h3>
+        <p>{{ 'shipping.step2_desc' | transloco }}</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <div class="step-icon">
+          <i class="fa-solid fa-truck-fast"></i>
+        </div>
+        <h3>{{ 'shipping.step3_title' | transloco }}</h3>
+        <p>{{ 'shipping.step3_desc' | transloco }}</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+        <div class="step-icon">
+          <i class="fa-solid fa-house-circle-check"></i>
+        </div>
+        <h3>{{ 'shipping.step4_title' | transloco }}</h3>
+        <p>{{ 'shipping.step4_desc' | transloco }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shipping Information -->
+  <section class="shipping-info-section">
+    <div class="info-wrapper">
+      <div class="info-content">
+        <span class="section-label">{{ 'shipping.info_label' | transloco }}</span>
+
+        <h2>
+          {{ 'shipping.info_title' | transloco }}
+          <span>{{ 'shipping.info_title_span' | transloco }}</span>
+        </h2>
+
+        <p>{{ 'shipping.info_desc' | transloco }}</p>
+
+        <div class="info-list">
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <div>
+              <h4>{{ 'shipping.delivery_duration_title' | transloco }}</h4>
+              <p>{{ 'shipping.delivery_duration_desc' | transloco }}</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fa-solid fa-coins"></i>
+            </div>
+            <div>
+              <h4>{{ 'shipping.shipping_fees_title' | transloco }}</h4>
+              <p>{{ 'shipping.shipping_fees_desc' | transloco }}</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <div>
+              <h4>{{ 'shipping.delivery_areas_title' | transloco }}</h4>
+              <p>{{ 'shipping.delivery_areas_desc' | transloco }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-visual">
+        <div class="visual-card">
+          <div class="visual-icon">
+            <i class="fa-solid fa-box"></i>
+          </div>
+
+          <strong>ShoppyGo</strong>
+          <span>{{ 'shipping.your_order_on_way' | transloco }}</span>
+
+          <div class="progress">
+            <span></span>
+          </div>
+
+          <div class="delivery-status">
+            <span>
+              <i class="fa-solid fa-circle-check"></i>
+              {{ 'shipping.order_prepared' | transloco }}
+            </span>
+
+            <span>
+              <i class="fa-solid fa-truck"></i>
+              {{ 'shipping.delivering_now' | transloco }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment -->
+  <section class="payment-section">
+    <div class="payment-card">
+      <div class="payment-icon">
+        <i class="fa-solid fa-money-bill-wave"></i>
+      </div>
+
+      <div class="payment-content">
+        <span>{{ 'shipping.payment_method' | transloco }}</span>
+        <h2>{{ 'shipping.cod_available' | transloco }}</h2>
+
+        <p>{{ 'shipping.cod_desc' | transloco }}</p>
+      </div>
+
+      <div class="payment-badge">
+        <i class="fa-solid fa-check"></i>
+        {{ 'shipping.available' | transloco }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tracking -->
+  <section class="tracking-section">
+    <div class="tracking-content">
+      <div class="tracking-icon">
+        <i class="fa-solid fa-location-crosshairs"></i>
+      </div>
+
+      <div>
+        <span>{{ 'shipping.track_your_order' | transloco }}</span>
+
+        <h2>{{ 'shipping.know_where_order_is' | transloco }}</h2>
+
+        <p>{{ 'shipping.tracking_desc' | transloco }}</p>
+      </div>
+
+      <a routerLink="/user/user-account/my-orders" class="tracking-button">
+        {{ 'shipping.track_my_orders_btn' | transloco }}
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-heading">
+      <span>{{ 'shipping.faq_subtitle' | transloco }}</span>
+      <h2>{{ 'shipping.have_question' | transloco }}</h2>
+      <p>{{ 'shipping.faq_desc' | transloco }}</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'shipping.faq1_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'shipping.faq1_a' | transloco }}</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'shipping.faq2_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'shipping.faq2_a' | transloco }}</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'shipping.faq3_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'shipping.faq3_a' | transloco }}</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'shipping.faq4_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'shipping.faq4_a' | transloco }}</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'shipping.faq5_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'shipping.faq5_a' | transloco }}</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>{{ 'shipping.faq6_q' | transloco }}</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <p>{{ 'shipping.faq6_a' | transloco }}</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="shipping-cta">
+    <div class="cta-content">
+      <div class="cta-icon">
+        <i class="fa-solid fa-box"></i>
+      </div>
+
+      <h2>{{ 'shipping.ready_to_order' | transloco }}</h2>
+
+      <p>{{ 'shipping.cta_desc' | transloco }}</p>
+
+      <a routerLink="/user/store" class="cta-button">
+        {{ 'shipping.start_shopping' | transloco }}
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+    </div>
+  </section>
+</div>

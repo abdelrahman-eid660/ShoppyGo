@@ -1,0 +1,335 @@
+.branches-page {
+  background-color: var(--body-background);
+  color: var(--reverse-color);
+  padding: 40px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: inherit;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hero Section */
+.branches-hero {
+  text-align: center;
+  padding: 50px 20px 40px;
+  background: var(--surface-background);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--form-background);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.hero-content h1 {
+  color: var(--text-primary);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 14px;
+}
+
+.hero-content p {
+  color: var(--parag-color);
+  font-size: 16px;
+  max-width: 650px;
+  margin: 0 auto 36px;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: start;
+}
+
+.stat-item i {
+  font-size: 26px;
+  color: var(--text-secondary);
+}
+
+.stat-item strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.stat-item span {
+  color: var(--parag-color);
+  font-size: 13px;
+}
+
+/* Filter Tabs */
+.filter-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.filter-tabs {
+  display: flex;
+  background: var(--surface-background);
+  border: 1px solid var(--border-color);
+  padding: 6px;
+  border-radius: 12px;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--parag-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.tab-btn.active {
+  background-color: var(--text-primary);
+  color: var(--white-color);
+}
+
+/* Branches Grid */
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.branch-card {
+  background: var(--surface-background);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.branch-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.branch-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.city-badge {
+  background: var(--form-background);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.main-tag {
+  background: rgba(241, 196, 15, 0.15);
+  color: #d35400;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.branch-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.info-row i {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+.info-row strong {
+  display: block;
+  color: var(--reverse-color);
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.info-row p {
+  color: var(--parag-color);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.phone-num {
+  font-weight: 600;
+  text-align: start;
+}
+
+/* Card Actions */
+.card-footer {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-map, .btn-call {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-map {
+  background-color: var(--text-primary);
+  color: var(--white-color);
+}
+
+.btn-map:hover {
+  opacity: 0.9;
+}
+
+.btn-call {
+  background-color: var(--form-background) !important;
+  color: var(--reverse-color) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.btn-call:hover {
+  background-color: var(--border-color);
+}
+
+/* Support Notice Section */
+.support-notice {
+  background: var(--form-background);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.notice-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.notice-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--surface-background);
+  color: var(--text-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border: 1px solid var(--border-color);
+}
+
+.notice-text {
+  flex: 1;
+}
+
+.notice-text h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.notice-text p {
+  font-size: 14px;
+  color: var(--parag-color);
+  margin: 0;
+}
+
+.btn-contact-us {
+  background-color: var(--surface-background);
+  color: var(--reverse-color) !important;
+  border: 1px solid var(--border-color);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-contact-us:hover {
+  background-color: var(--border-color);
+}
+
+/* RTL Arrow Flipping */
+:host-context([dir="rtl"]) .btn-contact-us i {
+  transform: scaleX(-1);
+}

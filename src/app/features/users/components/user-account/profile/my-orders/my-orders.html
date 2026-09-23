@@ -1,0 +1,257 @@
+<div class="orders-page-container">
+  <!-- Page Header -->
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">{{ 'profile.orders.title' | transloco }}</h1>
+      <p class="page-subtitle">{{ 'profile.orders.subtitle' | transloco }}</p>
+    </div>
+  </div>
+
+  <!-- Filter Tabs -->
+  <div class="filter-tabs">
+    <button class="tab-btn" [class.active]="activeFilter() === 'all'" (click)="setFilter('all')">
+      {{ 'profile.orders.filters.all' | transloco }}
+    </button>
+    <button class="tab-btn" [class.active]="activeFilter() === 'processing'" (click)="setFilter('processing')">
+      {{ 'profile.orders.filters.processing' | transloco }}
+    </button>
+    <button class="tab-btn" [class.active]="activeFilter() === 'shipped'" (click)="setFilter('shipped')">
+      {{ 'profile.orders.filters.shipped' | transloco }}
+    </button>
+    <button class="tab-btn" [class.active]="activeFilter() === 'delivered'" (click)="setFilter('delivered')">
+      {{ 'profile.orders.filters.delivered' | transloco }}
+    </button>
+    <button class="tab-btn" [class.active]="activeFilter() === 'cancelled'" (click)="setFilter('cancelled')">
+      {{ 'profile.orders.filters.cancelled' | transloco }}
+    </button>
+  </div>
+
+  <!-- Orders List Grid -->
+  @if (filteredOrders().length > 0) {
+    <div class="orders-grid">
+      @for (order of filteredOrders(); track order.id) {
+        <div class="order-card">
+          <!-- Card Header -->
+          <div class="card-top">
+            <div class="order-id-group">
+              <span class="order-no">#{{ order.orderNumber }}</span>
+              <span class="order-date"><i class="fa-regular fa-clock"></i> {{ order.date }}</span>
+            </div>
+            <span class="status-badge" [attr.data-status]="order.status">
+              {{ ('profile.orders.status.' + order.status) | transloco }}
+            </span>
+          </div>
+
+          <!-- Card Body -->
+          <div class="card-middle">
+            <div class="items-summary-info">
+              <i class="fa-solid fa-box-archive"></i>
+              <span>{{ order.itemsCount }} {{ 'profile.orders.items_count' | transloco }}</span>
+            </div>
+            <div class="total-amount-info">
+              <span class="label">{{ 'profile.orders.total' | transloco }}:</span>
+              <span class="price-val">{{ order.totalAmount }} {{ 'profile.orders.currency' | transloco }}</span>
+            </div>
+          </div>
+
+          <!-- Card Footer Actions -->
+          <div class="card-bottom">
+            <button type="button" class="btn-action primary" (click)="fetchAndOpenDetails(order.id)">
+              <i class="fa-regular fa-eye"></i>
+              <span>{{ 'profile.orders.view_details' | transloco }}</span>
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <!-- Empty State -->
+    <div class="empty-orders-state">
+      <i class="fa-solid fa-bag-shopping empty-icon"></i>
+      <h3>{{ 'profile.orders.empty.title' | transloco }}</h3>
+      <p>{{ 'profile.orders.empty.desc' | transloco }}</p>
+    </div>
+  }
+
+  <!-- =================================================== -->
+  <!-- ORDER DETAILS MODAL (EMBEDDED IN THE SAME COMPONENT) -->
+  <!-- =================================================== -->
+  @if (isModalOpen() && selectedOrder()) {
+    <div class="modal-backdrop" (click)="closeModal()"></div>
+
+    <div class="modal-wrapper" role="dialog" aria-modal="true">
+      <div class="modal-container">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div class="header-info">
+            <div class="title-with-badge">
+              <h2 class="modal-title">{{ 'profile.order_details.title' | transloco }}</h2>
+              <span class="order-number">#{{ selectedOrder()?.orderNumber }}</span>
+            </div>
+            <p class="order-date">
+              <i class="fa-regular fa-calendar-check"></i>
+              {{ 'profile.order_details.placed_on' | transloco }} {{ selectedOrder()?.date }}
+            </p>
+          </div>
+
+          <button type="button" class="btn-close" (click)="closeModal()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+
+          <!-- 1. Stepper / Tracking Status -->
+          <div class="order-stepper-card">
+            <h3 class="section-subtitle">{{ 'profile.order_details.tracking_status' | transloco }}</h3>
+
+            <div class="stepper-wrapper">
+              <!-- Step 1 -->
+              <div class="step-item" [class.completed]="isStepCompleted('placed')">
+                <div class="step-icon"><i class="fa-solid fa-receipt"></i></div>
+                <div class="step-label">
+                  <span class="step-title">{{ 'profile.order_details.steps.placed' | transloco }}</span>
+                </div>
+              </div>
+
+              <div class="step-line" [class.completed]="isStepCompleted('processing')"></div>
+
+              <!-- Step 2 -->
+              <div class="step-item" [class.completed]="isStepCompleted('processing')">
+                <div class="step-icon"><i class="fa-solid fa-box"></i></div>
+                <div class="step-label">
+                  <span class="step-title">{{ 'profile.order_details.steps.processing' | transloco }}</span>
+                </div>
+              </div>
+
+              <div class="step-line" [class.completed]="isStepCompleted('shipped')"></div>
+
+              <!-- Step 3 -->
+              <div class="step-item" [class.completed]="isStepCompleted('shipped')">
+                <div class="step-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                <div class="step-label">
+                  <span class="step-title">{{ 'profile.order_details.steps.shipped' | transloco }}</span>
+                </div>
+              </div>
+
+              <div class="step-line" [class.completed]="isStepCompleted('delivered')"></div>
+
+              <!-- Step 4 -->
+              <div class="step-item" [class.completed]="isStepCompleted('delivered')">
+                <div class="step-icon"><i class="fa-solid fa-house-chimney-check"></i></div>
+                <div class="step-label">
+                  <span class="step-title">{{ 'profile.order_details.steps.delivered' | transloco }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Address & Payment Grid -->
+          <div class="info-grid">
+            <div class="info-card">
+              <div class="card-header-icon">
+                <i class="fa-solid fa-location-dot"></i>
+                <h4>{{ 'profile.order_details.shipping_address' | transloco }}</h4>
+              </div>
+              <div class="card-content">
+                <p class="recipient-name">{{ selectedOrder()?.shippingAddress?.fullName }}</p>
+                <p class="address-text">{{ selectedOrder()?.shippingAddress?.street }}, {{ selectedOrder()?.shippingAddress?.city }}</p>
+                <p class="phone-text"><i class="fa-solid fa-phone"></i> {{ selectedOrder()?.shippingAddress?.phone }}</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="card-header-icon">
+                <i class="fa-solid fa-wallet"></i>
+                <h4>{{ 'profile.order_details.payment_info' | transloco }}</h4>
+              </div>
+              <div class="card-content">
+                <div class="payment-method-badge">
+                  <i class="fa-solid fa-credit-card"></i>
+                  <span>{{ ('profile.orders.payment.' + selectedOrder()?.paymentMethod) | transloco }}</span>
+                </div>
+                <p class="payment-status">
+                  <span class="label">{{ 'profile.order_details.payment_status' | transloco }}:</span>
+                  <span class="status-paid">{{ 'profile.order_details.paid' | transloco }}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Products List -->
+          <div class="products-section">
+            <h3 class="section-subtitle">{{ 'profile.order_details.items_summary' | transloco }}</h3>
+            <div class="products-list">
+              @for (item of selectedOrder()?.items; track item.id) {
+                <div class="product-item-row">
+                  <div class="product-thumb">
+                    <img [src]="item.image" [alt]="item.name" />
+                  </div>
+                  <div class="product-meta">
+                    <h4 class="product-title">{{ item.name }}</h4>
+                    @if (item.variant) {
+                      <span class="product-variant">{{ item.variant }}</span>
+                    }
+                    <span class="product-unit-price">
+                      {{ item.price }} {{ 'profile.orders.currency' | transloco }} × {{ item.quantity }}
+                    </span>
+                  </div>
+                  <div class="product-total-price">
+                    {{ item.price * item.quantity }} {{ 'profile.orders.currency' | transloco }}
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+
+          <!-- 4. Invoice Summary -->
+          <div class="invoice-summary">
+            <div class="summary-row">
+              <span>{{ 'profile.order_details.subtotal' | transloco }}</span>
+              <span>{{ selectedOrder()?.subtotal }} {{ 'profile.orders.currency' | transloco }}</span>
+            </div>
+            <div class="summary-row">
+              <span>{{ 'profile.order_details.shipping_fee' | transloco }}</span>
+              <span>{{ selectedOrder()?.shippingFee }} {{ 'profile.orders.currency' | transloco }}</span>
+            </div>
+            @if (selectedOrder()?.discount) {
+              <div class="summary-row discount">
+                <span>{{ 'profile.order_details.discount' | transloco }}</span>
+                <span>-{{ selectedOrder()?.discount }} {{ 'profile.orders.currency' | transloco }}</span>
+              </div>
+            }
+            <div class="summary-divider"></div>
+            <div class="summary-row total">
+              <span>{{ 'profile.order_details.grand_total' | transloco }}</span>
+              <span class="grand-price">{{ selectedOrder()?.totalAmount }} {{ 'profile.orders.currency' | transloco }}</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn-footer outline" (click)="downloadInvoice(selectedOrder()?.orderNumber)">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span>{{ 'profile.order_details.actions.download_invoice' | transloco }}</span>
+          </button>
+
+          <div class="footer-primary-actions">
+            @if (selectedOrder()?.status === 'processing') {
+              <button type="button" class="btn-footer danger" (click)="cancelOrder(selectedOrder()!.id)">
+                <i class="fa-solid fa-ban"></i>
+                <span>{{ 'profile.order_details.actions.cancel_order' | transloco }}</span>
+              </button>
+            }
+            <button type="button" class="btn-footer primary" (click)="closeModal()">
+              <span>{{ 'profile.order_details.actions.done' | transloco }}</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  }
+</div>
