@@ -8,7 +8,7 @@
       <h1>{{ 'auth_user.confirm_otp.title' | transloco }}</h1>
       <p>
         {{ 'auth_user.confirm_otp.subtitle' | transloco }}
-        <strong class="user-email" dir="ltr">usr***&#64;domain.com</strong>
+        <strong class="user-email" dir="ltr">{{maskEmail(userEmail)}}</strong>
       </p>
     </div>
 

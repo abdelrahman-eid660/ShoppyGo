@@ -2,6 +2,8 @@ import { Component, computed, ElementRef, inject, QueryList, signal, ViewChildre
 import { Router, RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { AuthService } from '../../../../../core/service/auth.service';
+import { MessageService } from 'primeng/api';
+import { environment } from '../../../../../shared/environments/environment';
 
 @Component({
   selector: 'app-user-otp',
@@ -14,6 +16,10 @@ export class UserOtp {
 
   private router = inject(Router);
   private authService = inject(AuthService);
+  protected readonly userEmail = localStorage.getItem("user-email")
+  private readonly messageService = inject(MessageService);
+  private readonly OTP_EXPIRE = environment.timerOtp
+
 
   otpDigits = signal<string[]>(['', '', '', '', '', '']);
   timer = signal<number>(60);
@@ -22,7 +28,6 @@ export class UserOtp {
 
   private intervalId: any = null;
 
-  // Computed Signal للتتحقق من اكتمال الـ 6 أرقام
   isOtpComplete = computed(() => {
     return this.otpDigits().every(digit => digit.trim() !== '');
   });
@@ -34,6 +39,12 @@ export class UserOtp {
     return `${minutes}:${seconds}`;
   });
 
+  maskEmail(email: string | null): string {
+    if (!email) return '';
+    const [name, domain] = email.split('@');
+    return `${name[0]}${name[1]}***${name[name.length - 1]}@${domain}`;
+  }
+
   ngOnInit(): void {
     this.startTimer();
   }
@@ -44,7 +55,7 @@ export class UserOtp {
 
   startTimer(): void {
     this.canResend.set(false);
-    this.timer.set(60);
+    this.timer.set(this.OTP_EXPIRE);
     this.clearTimer();
 
     this.intervalId = setInterval(() => {
@@ -119,24 +130,35 @@ export class UserOtp {
 
     this.isLoading.set(true);
     const code = this.otpDigits().join('');
-    console.log('Verifying OTP Code:', code);
+    this.authService.patch({body : code , path : 'Confirm-OTP'}).subscribe({
+      next : ()=>{
+        this.isLoading.set(false)
+        this.router.navigateByUrl('/user/auth/login')
+      },
+      error : (err)=> {
 
-    // محاكاة الاتصال بالـ Backend API
+      }
+    })
 
-      this.isLoading.set(false);
-      // التوجيه للرئيسية أو صفحة إعادة تعيين كلمة المرور
-      this.router.navigate(['/']);
   }
 
   resendOtp(): void {
     if (!this.canResend()) return;
 
-    // تفريغ الخانات والتركيز على الخانة الأولى
     this.otpDigits.set(['', '', '', '', '', '']);
     this.otpInputs.forEach(input => (input.nativeElement.value = ''));
     this.otpInputs.first?.nativeElement.focus();
+    this.isLoading.set(true)
+    this.authService.patch({path : 'resend-Confirm-OTP' , body : this.userEmail }).subscribe({
+      next : (value : any)=> {
+        this.messageService.add({ severity: 'success', summary: 'Resend Successful', detail: value.data });
 
-    this.startTimer();
-    console.log('Resending OTP...');
+        this.isLoading.set(false)
+      },
+      error : (err)=> {
+        this.messageService.add({severity : 'error' , summary : 'some thing error' , detail : err.message})
+        this.isLoading.set(false)
+      },
+    })
   }
 }

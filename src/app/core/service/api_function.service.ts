@@ -14,8 +14,8 @@ export class APIFunction implements APIStructuare{
   get<T>({path , params}:{path? : string , params? :HttpParams}): Observable<T> {
     return this.http.get<T>(`${this.baseUrl}/${this.router}/${path}`, {params , withCredentials : true})
   }
-  patch<T>({id , body}:{id : string , body : any}): Observable<T> {
-    return this.http.patch<T>(`${this.baseUrl}/${this.router}/${id}`,body,{withCredentials : true})
+  patch<T>({path='' , id , body}:{path? : string , id? : string , body : any}): Observable<T> {
+    return this.http.patch<T>(`${this.baseUrl}/${this.router}/${path}/${id}`,body,{withCredentials : true})
   }
   post<T>({path = '' , body}:{path? : string , body : any}): Observable<T> {
     return this.http.post<T>(`${this.baseUrl}/${this.router}/${path}`,body,{withCredentials : true})

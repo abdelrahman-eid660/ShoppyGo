@@ -1,4 +1,4 @@
-import { Component, computed, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, DestroyRef, effect, inject, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
@@ -110,9 +110,19 @@ export class UserSignup implements OnInit {
     //   this.registerForm.markAllAsTouched();
     //   return;
     // }
-            this.messageService.add({ severity: 'success', summary: 'Saved successfully', detail: 'Your changes have been saved.' });
-
-    this.isLoading.set(true);
+    this.isLoading.set(true)
+    this.authService.post({path : 'signup' , body : this.registerForm.value}).subscribe({
+      next : ()=> {
+        this.messageService.add({ severity: 'success', summary: 'Saved successfully', detail: 'Your changes have been saved.' });
+        localStorage.setItem("user-email",this.registerForm.get("email")?.value)
+        this.router.navigateByUrl('/user/auth/confirm-OTP')
+        this.isLoading.set(false)
+      },
+      error : (err)=> {
+        this.messageService.add({severity : 'error' , summary : 'some thing error' , detail : err.message})
+        this.isLoading.set(false)
+      },
+    })
     // API submission logic here
   }
 
